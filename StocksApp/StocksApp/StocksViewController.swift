@@ -13,14 +13,15 @@ final class StocksViewController: UIViewController {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(StockCell.self, forCellReuseIdentifier: StockCell.typeName)
-        tableView.backgroundColor = .white
         tableView.separatorStyle = .none
         return tableView
     }()
 
+    private let colorForOneCell = UIColor(r: 240, g: 244, b: 247)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         setUpSubViews()
         tableView.dataSource = self
     }
@@ -44,6 +45,11 @@ extension StocksViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StockCell.typeName, for: indexPath) as! StockCell
         
+        if indexPath.row.isMultiple(of: 2) {
+            cell.cellView.backgroundColor = colorForOneCell
+        } else {
+            cell.cellView.backgroundColor = .white
+        }
         return cell
     }
     
@@ -55,3 +61,5 @@ extension NSObject {
         String(describing: self)
     }
 }
+
+
