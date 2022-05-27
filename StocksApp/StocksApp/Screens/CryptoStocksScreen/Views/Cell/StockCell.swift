@@ -37,7 +37,7 @@ class StockCell: UITableViewCell {
         return label
     }()
     
-    private lazy var corporationNameLabel: UILabel = {
+    private lazy var cryptoNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Apple Inc."
@@ -85,11 +85,18 @@ class StockCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configure(with stock: Stock) {
+        symbolLabel.text = stock.symbol
+        cryptoNameLabel.text = stock.name
+        currentPriceLabel.text = "$\(String(format: "%.2f", stock.price))"
+        changedPriceLabel.text = "$\(String(format: "%.2f", stock.change)) (\(String(format: "%.2f", stock.changePercentage))%)"
+    }
+    
     private func setUpViews() {
         contentView.addSubview(cellView)
         cellView.addSubview(iconView)
         cellView.addSubview(symbolLabel)
-        cellView.addSubview(corporationNameLabel)
+        cellView.addSubview(cryptoNameLabel)
         cellView.addSubview(starButton)
         cellView.addSubview(currentPriceLabel)
         cellView.addSubview(changedPriceLabel)
@@ -117,8 +124,8 @@ class StockCell: UITableViewCell {
         symbolLabel.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 14).isActive = true
         
         // CorporationName label
-        corporationNameLabel.leadingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: 12).isActive = true
-        corporationNameLabel.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -14).isActive = true
+        cryptoNameLabel.leadingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: 12).isActive = true
+        cryptoNameLabel.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -14).isActive = true
         
         // StarButton
         starButton.leadingAnchor.constraint(equalTo: symbolLabel.trailingAnchor, constant: 6).isActive = true

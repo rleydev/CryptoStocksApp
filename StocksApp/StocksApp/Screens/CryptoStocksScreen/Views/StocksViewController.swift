@@ -8,6 +8,8 @@
 import UIKit
 
 final class StocksViewController: UIViewController {
+    
+    private var stocks: [Stock] = []
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -24,6 +26,8 @@ final class StocksViewController: UIViewController {
         view.backgroundColor = .white
         setUpSubViews()
         tableView.dataSource = self
+        tableView.delegate = self
+        getStocks()
     }
 
     private func setUpSubViews() {
@@ -35,11 +39,30 @@ final class StocksViewController: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
     }
+    
+    private func getStocks() {
+        let client = Network()
+        let service: StocksServiceProtocol = StocksService(client: client)
+        
+        service.getStocks { [weak self] result in
+            switch result {
+            case.success(let stocks):
+                self?.stocks = stocks
+                self?.tableView.reloadData()
+            case .failure(let error):
+                self?.showError(message: error.localizedDescription)
+            }
+        }
+    }
+    
+    private func showError(message: String) {
+        print(message)
+    }
 }
 
 extension StocksViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return stocks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,11 +73,19 @@ extension StocksViewController: UITableViewDataSource {
         } else {
             cell.cellView.backgroundColor = .white
         }
+        cell.configure(with: stocks[indexPath.row])
         return cell
     }
-    
-    
 }
+
+extension StocksViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = stocks[indexPath.row]
+        let vc = StockViewController(stock: StockGraphModel(symbol: data.symbol, name: data.name, currentPrice: data.price, changePrice: data.change, changePercentage: data.changePercentage))
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
 
 extension NSObject {
     static var typeName: String {
