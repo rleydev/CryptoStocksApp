@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StockViewController: UIViewController {
+final class StockViewController: UIViewController {
     
     private let stock: StockGraphModel
     
@@ -88,7 +88,6 @@ class StockViewController: UIViewController {
         view.addSubview(currentPriceLabel)
         view.addSubview(pricePercentageLabel)
         navigationItem.rightBarButtonItem = starButton
-        
     }
     
     private func setUpConstrains() {

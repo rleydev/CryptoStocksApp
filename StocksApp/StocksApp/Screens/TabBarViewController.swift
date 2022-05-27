@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
+final class TabBarViewController: UITabBarController {
     
     private let fisrtController: UINavigationController = {
         let controller = StocksViewController()
