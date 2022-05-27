@@ -60,6 +60,11 @@ class StockViewController: UIViewController {
         return label
     }()
     
+    private lazy var starButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(image: UIImage(systemName: "star") , style: .plain, target: self, action: nil)
+        return button
+        
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,8 +73,6 @@ class StockViewController: UIViewController {
         setupViews()
         setUpConstrains()
         navigationSetup()
-        barButtonNav()
-        
     }
     
     init(stock: StockGraphModel) {
@@ -84,6 +87,7 @@ class StockViewController: UIViewController {
     private func setupViews() {
         view.addSubview(currentPriceLabel)
         view.addSubview(pricePercentageLabel)
+        navigationItem.rightBarButtonItem = starButton
         
     }
     
@@ -112,14 +116,6 @@ class StockViewController: UIViewController {
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
-    
-    private func barButtonNav() {
-        let testUIBarButtonItem = UIBarButtonItem(image: UIImage(named: "star"), style: .plain, target: self, action: #selector(tapped))
-        navigationItem.rightBarButtonItem = testUIBarButtonItem
-    }
-    
-    @objc private func tapped() {
-        print("tapped")
-    }
+
 }
 
