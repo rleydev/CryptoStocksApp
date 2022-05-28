@@ -1,11 +1,11 @@
 //
-//  StockModel.swift
+//  StockResponse.swift
 //  StocksApp
 //
-//  Created by Arthur Lee on 26.05.2022.
+//  Created by Arthur Lee on 28.05.2022.
 //
 
-import UIKit
+import Foundation
 
 struct Stock: Decodable {
     let id: String
@@ -23,4 +23,3 @@ struct Stock: Decodable {
         case changePercentage = "price_change_percentage_24h"
     }
 }
-

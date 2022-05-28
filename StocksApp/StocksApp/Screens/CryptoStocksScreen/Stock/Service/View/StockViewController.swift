@@ -9,31 +9,37 @@ import UIKit
 
 final class StockViewController: UIViewController {
     
-    private let stock: StockGraphModel
-    
-    private lazy var titleStackView: UIStackView = {
-        let titleLabel = UILabel()
-        titleLabel.textAlignment = .center
-        titleLabel.text = stock.symbol.uppercased()
-        titleLabel.font = UIFont(name: "Montserrat", size: 18)
-        titleLabel.font = .boldSystemFont(ofSize: 18)
-        titleLabel.textColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
-        let subtitleLabel = UILabel()
-        subtitleLabel.textAlignment = .center
-        subtitleLabel.text = stock.name
-        subtitleLabel.font = UIFont(name: "Montserrat-SemiBold", size: 12)
-        subtitleLabel.font = .systemFont(ofSize: 12)
-        subtitleLabel.textColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
-        let stackView = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 4
         return stackView
     }()
     
+    private lazy var titleLabel: UILabel = {
+        let titleLabel = UILabel()
+        titleLabel.textAlignment = .center
+        titleLabel.text = "Title"
+        titleLabel.font = UIFont(name: "Montserrat", size: 18)
+        titleLabel.font = .boldSystemFont(ofSize: 18)
+        titleLabel.textColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
+        return titleLabel
+    }()
+    
+    private lazy var subtitleLabel: UILabel = {
+        let subtitleLabel = UILabel()
+        subtitleLabel.textAlignment = .center
+        subtitleLabel.text = "Name"
+        subtitleLabel.font = UIFont(name: "Montserrat-SemiBold", size: 12)
+        subtitleLabel.font = .systemFont(ofSize: 12)
+        subtitleLabel.textColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
+        return subtitleLabel
+    }()
+    
     private lazy var currentPriceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = String(format: "$%.2f", stock.currentPrice)
+        label.text = String(format: "$%.2f", "Price")
         label.font = UIFont(name: "Montserrat", size: 28)
         label.frame = CGRect(x: 0, y: 0, width: 98, height: 32)
         label.font = .boldSystemFont(ofSize: 28)
@@ -48,15 +54,13 @@ final class StockViewController: UIViewController {
     private lazy var pricePercentageLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "\(String(format: "%.2f", stock.changePrice))$ (\(String(format: "%.2f", stock.changePercentage))%)"
+        label.text = "\(String(format: "%.2f", "Change"))$ (\(String(format: "%.2f", "percentage"))%)"
         label.font = UIFont(name: "Montserrat", size: 12)
         label.frame = CGRect(x: 0, y: 0, width: 78, height: 16)
         label.font = .boldSystemFont(ofSize: 12)
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.01
-        let color = UIColor(red: 0.14, green: 0.7, blue: 0.364, alpha: 1)
-        label.textColor = color
         return label
     }()
     
@@ -69,14 +73,13 @@ final class StockViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        navigationItem.titleView = titleStackView
         setupViews()
         setUpConstrains()
         navigationSetup()
     }
     
-    init(stock: StockGraphModel) {
-        self.stock = stock
+    init() {
+//        self.stock = stock
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -84,11 +87,28 @@ final class StockViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configureLabelViews(with model: StocksModelProtocol) {
+        titleLabel.text = model.symbol
+        subtitleLabel.text = model.name
+        currentPriceLabel.text = model.price
+        pricePercentageLabel.text = model.priceChanged
+        pricePercentageLabel.textColor = { model.changeColor }()
+    }
+    
     private func setupViews() {
         view.addSubview(currentPriceLabel)
         view.addSubview(pricePercentageLabel)
+        setUpStackView()
+        view.addSubview(stackView)
+        navigationItem.titleView = stackView
         navigationItem.rightBarButtonItem = starButton
     }
+    
+    private func setUpStackView() {
+        stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(subtitleLabel)
+    }
+    
     
     private func setUpConstrains() {
         
