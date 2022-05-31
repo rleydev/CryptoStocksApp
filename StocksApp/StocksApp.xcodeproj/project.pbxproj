@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71D0B1F6284291A40020A708 /* StockPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D0B1F5284291A40020A708 /* StockPresenter.swift */; };
 		97030A28283CC821004D9D88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97030A27283CC821004D9D88 /* AppDelegate.swift */; };
 		97030A2C283CC821004D9D88 /* StocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97030A2B283CC821004D9D88 /* StocksViewController.swift */; };
 		97030A31283CC822004D9D88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97030A30283CC822004D9D88 /* Assets.xcassets */; };
@@ -25,10 +26,11 @@
 		97BAC7FE284211CE002BF05E /* StocksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC7FD284211CE002BF05E /* StocksRouter.swift */; };
 		97BAC8002842124C002BF05E /* StockResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC7FF2842124C002BF05E /* StockResponse.swift */; };
 		97BAC80228421AE3002BF05E /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC80128421AE3002BF05E /* ModuleBuilder.swift */; };
-		97BAC80A28422B04002BF05E /* StockRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC80928422B04002BF05E /* StockRouter.swift */; };
+		97BAC8182842A23D002BF05E /* StockPricesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC8172842A23D002BF05E /* StockPricesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		71D0B1F5284291A40020A708 /* StockPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPresenter.swift; sourceTree = "<group>"; };
 		97030A24283CC821004D9D88 /* StocksApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StocksApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97030A27283CC821004D9D88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97030A2B283CC821004D9D88 /* StocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksViewController.swift; sourceTree = "<group>"; };
@@ -49,7 +51,7 @@
 		97BAC7FD284211CE002BF05E /* StocksRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksRouter.swift; sourceTree = "<group>"; };
 		97BAC7FF2842124C002BF05E /* StockResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockResponse.swift; sourceTree = "<group>"; };
 		97BAC80128421AE3002BF05E /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
-		97BAC80928422B04002BF05E /* StockRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRouter.swift; sourceTree = "<group>"; };
+		97BAC8172842A23D002BF05E /* StockPricesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPricesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,11 +92,46 @@
 			path = StocksApp;
 			sourceTree = "<group>";
 		};
+		9764BFB6284637FF00D0CA67 /* GraphStockScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9764BFB92846383900D0CA67 /* View */,
+				9764BFB82846382200D0CA67 /* Presenter */,
+				9764BFB72846381500D0CA67 /* Model */,
+			);
+			path = GraphStockScreen;
+			sourceTree = "<group>";
+		};
+		9764BFB72846381500D0CA67 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				97BAC8172842A23D002BF05E /* StockPricesModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9764BFB82846382200D0CA67 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				71D0B1F5284291A40020A708 /* StockPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9764BFB92846383900D0CA67 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				97672FE2283FFDE400478FBD /* StockViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		97672FAA283FC83000478FBD /* CryptoStocksScreen */ = {
 			isa = PBXGroup;
 			children = (
-				97BAC80528422AAF002BF05E /* Stock */,
-				97BAC7F428420AC7002BF05E /* AllStocks */,
+				97672FAF283FC8C900478FBD /* Service */,
+				9764BFB6284637FF00D0CA67 /* GraphStockScreen */,
+				97BAC7F428420AC7002BF05E /* AllStocksScreen */,
 			);
 			path = CryptoStocksScreen;
 			sourceTree = "<group>";
@@ -152,13 +189,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		97672FB1283FC8F400478FBD /* Views */ = {
+		97672FB1283FC8F400478FBD /* View */ = {
 			isa = PBXGroup;
 			children = (
 				97030A2B283CC821004D9D88 /* StocksViewController.swift */,
 				97672FAB283FC86100478FBD /* Cell */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		97BAC7F328420AA1002BF05E /* Presenter */ = {
@@ -169,15 +206,14 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		97BAC7F428420AC7002BF05E /* AllStocks */ = {
+		97BAC7F428420AC7002BF05E /* AllStocksScreen */ = {
 			isa = PBXGroup;
 			children = (
-				97672FAF283FC8C900478FBD /* Service */,
 				97672FB0283FC8E900478FBD /* Model */,
-				97672FB1283FC8F400478FBD /* Views */,
+				97672FB1283FC8F400478FBD /* View */,
 				97BAC7F328420AA1002BF05E /* Presenter */,
 			);
-			path = AllStocks;
+			path = AllStocksScreen;
 			sourceTree = "<group>";
 		};
 		97BAC7F7284210D2002BF05E /* Application */ = {
@@ -215,39 +251,6 @@
 				97030A3D283D2B07004D9D88 /* UIColorExtension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		97BAC80528422AAF002BF05E /* Stock */ = {
-			isa = PBXGroup;
-			children = (
-				97BAC80628422ABD002BF05E /* Service */,
-			);
-			path = Stock;
-			sourceTree = "<group>";
-		};
-		97BAC80628422ABD002BF05E /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				97BAC80828422AEF002BF05E /* Service */,
-				97BAC80728422AE3002BF05E /* View */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		97BAC80728422AE3002BF05E /* View */ = {
-			isa = PBXGroup;
-			children = (
-				97672FE2283FFDE400478FBD /* StockViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		97BAC80828422AEF002BF05E /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				97BAC80928422B04002BF05E /* StockRouter.swift */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,9 +325,9 @@
 			files = (
 				97030A2C283CC821004D9D88 /* StocksViewController.swift in Sources */,
 				97BAC7FC28421155002BF05E /* NSObjectExtension.swift in Sources */,
-				97BAC80A28422B04002BF05E /* StockRouter.swift in Sources */,
 				97BAC7F628420B00002BF05E /* StocksPresenter.swift in Sources */,
 				97672FB8283FC96E00478FBD /* NetworkError.swift in Sources */,
+				97BAC8182842A23D002BF05E /* StockPricesModel.swift in Sources */,
 				97BAC7FE284211CE002BF05E /* StocksRouter.swift in Sources */,
 				97672FBF283FCBBB00478FBD /* StocksService.swift in Sources */,
 				97672FBC283FCA2E00478FBD /* StockModel.swift in Sources */,
@@ -333,6 +336,7 @@
 				97BAC80228421AE3002BF05E /* ModuleBuilder.swift in Sources */,
 				97672FE3283FFDE400478FBD /* StockViewController.swift in Sources */,
 				97BAC8002842124C002BF05E /* StockResponse.swift in Sources */,
+				71D0B1F6284291A40020A708 /* StockPresenter.swift in Sources */,
 				97672FBA283FC99100478FBD /* HTTPMethod.swift in Sources */,
 				97030A28283CC821004D9D88 /* AppDelegate.swift in Sources */,
 				97672FB6283FC95100478FBD /* NetworkService.swift in Sources */,

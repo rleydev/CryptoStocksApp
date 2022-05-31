@@ -64,11 +64,30 @@ final class StockViewController: UIViewController {
         return label
     }()
     
+    private lazy var graphView: UIView = {
+        let graphView = UIView()
+        graphView.translatesAutoresizingMaskIntoConstraints = false
+        graphView.backgroundColor = .red
+        return graphView
+    }()
+    
     private lazy var starButton: UIBarButtonItem = {
         let button = UIBarButtonItem(image: UIImage(systemName: "star") , style: .plain, target: self, action: nil)
         return button
         
     }()
+    
+    var presenter: StockPresentProtocol
+    
+    init(with presenter: StockPresentProtocol) {
+        self.presenter = presenter
+
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,15 +95,7 @@ final class StockViewController: UIViewController {
         setupViews()
         setUpConstrains()
         navigationSetup()
-    }
-    
-    init() {
-//        self.stock = stock
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        
     }
     
     func configureLabelViews(with model: StocksModelProtocol) {
@@ -93,11 +104,19 @@ final class StockViewController: UIViewController {
         currentPriceLabel.text = model.price
         pricePercentageLabel.text = model.priceChanged
         pricePercentageLabel.textColor = { model.changeColor }()
+        
+    }
+    
+    func configureGraphChart(with graphData: StockPricesModelProtocol) {
+        // configure graph from
+//        graphData.prices
+        
     }
     
     private func setupViews() {
         view.addSubview(currentPriceLabel)
         view.addSubview(pricePercentageLabel)
+        view.addSubview(graphView)
         setUpStackView()
         view.addSubview(stackView)
         navigationItem.titleView = stackView
@@ -123,7 +142,11 @@ final class StockViewController: UIViewController {
         pricePercentageLabel.heightAnchor.constraint(equalToConstant: 16).isActive = true
         pricePercentageLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
         pricePercentageLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 202).isActive = true
-        
+        /// View
+        graphView.topAnchor.constraint(equalTo: view.topAnchor, constant: 248).isActive = true
+        graphView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        graphView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        graphView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -212).isActive = true
     }
     
     private func navigationSetup() {
@@ -137,4 +160,5 @@ final class StockViewController: UIViewController {
     }
 
 }
+
 

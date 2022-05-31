@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol StocksViewProtocol: AnyObject {
     func updateView()
@@ -13,20 +14,25 @@ protocol StocksViewProtocol: AnyObject {
     func updateView(withError message: String)
 }
 
+
+
 protocol StocksPresenterProtocol {
     var view: StocksViewProtocol? { get set }
+    var stocks: [StocksModelProtocol] { get }
     var itemCount: Int { get }
-    
     func loadView()
     func model(for indexPath: IndexPath) -> StocksModelProtocol
     
+    
 }
 
+
 final class StocksPresenter: StocksPresenterProtocol {
+    
 
     private let service: StocksServiceProtocol
     
-    private var stocks: [StocksModelProtocol] = []
+    var stocks: [StocksModelProtocol] = []
     
     var itemCount: Int {
         stocks.count
@@ -39,8 +45,8 @@ final class StocksPresenter: StocksPresenterProtocol {
     weak var view: StocksViewProtocol?
     
     func loadView() {
-// Go to newtwork
         view?.updateView(withLoader: true)
+
 // Getting back with data and delete loader
         service.getStocks { [weak self] result in
             self?.view?.updateView(withLoader: false)
@@ -53,11 +59,12 @@ final class StocksPresenter: StocksPresenterProtocol {
                 self?.view?.updateView(withError: error.localizedDescription)
             }
         }
-
     }
+        
     
     func model(for indexPath: IndexPath) -> StocksModelProtocol {
         stocks[indexPath.row]
     }
     
 }
+

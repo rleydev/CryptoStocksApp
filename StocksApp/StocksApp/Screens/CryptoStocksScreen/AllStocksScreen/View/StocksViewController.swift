@@ -21,6 +21,7 @@ final class StocksViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -70,7 +71,7 @@ extension StocksViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StockCell.typeName, for: indexPath) as! StockCell
-        
+        cell.selectionStyle = .none
         if indexPath.row.isMultiple(of: 2) {
             cell.cellView.backgroundColor = colorForOneCell
         } else {
@@ -82,13 +83,14 @@ extension StocksViewController: UITableViewDataSource {
 }
 
 extension StocksViewController: StocksViewProtocol {
+ 
     
     func updateView() {
         tableView.reloadData()
     }
     
     func updateView(withLoader isLoading: Bool) {
-        print("Loader id -", isLoading, "at -", Date())
+        print("Loader is -", isLoading, "at -", Date())
     }
     
     func updateView(withError message: String) {
@@ -99,8 +101,16 @@ extension StocksViewController: StocksViewProtocol {
 
 extension StocksViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = StockViewController()
-        vc.configureLabelViews(with: presenter.model(for: indexPath))
+        
+        let service = StocksService(client: Network())
+        let stockPresenter = StockPresenter(with: presenter.model(for: indexPath).id, withService: service)
+        let vc = StockViewController(with: stockPresenter)
+        vc.presenter.loadGraphData(with: presenter.model(for: indexPath).id)
+        // conf items
+        vc.configureLabelViews(with: presenter.stocks[indexPath.row])
+        
+// Graph chart will be set in STOCKViewcontroller
+        
         navigationController?.pushViewController(vc, animated: true)
     }
 }

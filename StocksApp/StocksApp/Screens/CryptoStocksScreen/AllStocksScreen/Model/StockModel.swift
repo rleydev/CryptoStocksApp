@@ -26,6 +26,7 @@ final class StockModel: StocksModelProtocol {
     init(stock: Stock) {
         self.stock = stock
     }
+
     
     var id: String {
         stock.id
@@ -55,6 +56,7 @@ final class StockModel: StocksModelProtocol {
     var changeColor: UIColor {
         stock.change >= 0 ? UIColor(r: 36, g: 178, b: 93) : .red
     }
+
     
     var isFavorite: Bool = false
 }
