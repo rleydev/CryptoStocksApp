@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StockCell: UITableViewCell {
+final class StockCell: UITableViewCell {
     
     lazy var cellView: UIView = {
         let view = UIView()

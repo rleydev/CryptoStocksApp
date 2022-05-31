@@ -16,7 +16,7 @@ protocol StockPresentProtocol {
     init(with id: String, withService service: StocksServiceProtocol)
 }
 
-class StockPresenter: StockPresentProtocol {
+final class StockPresenter: StockPresentProtocol {
     
     weak var view: StocksViewProtocol?
     
