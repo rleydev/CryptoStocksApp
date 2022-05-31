@@ -14,6 +14,7 @@
 		97030A34283CC822004D9D88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97030A32283CC822004D9D88 /* LaunchScreen.storyboard */; };
 		97030A3C283CEA4D004D9D88 /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97030A3B283CEA4D004D9D88 /* StockCell.swift */; };
 		97030A3E283D2B07004D9D88 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97030A3D283D2B07004D9D88 /* UIColorExtension.swift */; };
+		9764BFBB28465F3C00D0CA67 /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9764BFBA28465F3C00D0CA67 /* FavoritesService.swift */; };
 		97672FB4283FC93400478FBD /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97672FB3283FC93400478FBD /* Router.swift */; };
 		97672FB6283FC95100478FBD /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97672FB5283FC95100478FBD /* NetworkService.swift */; };
 		97672FB8283FC96E00478FBD /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97672FB7283FC96E00478FBD /* NetworkError.swift */; };
@@ -39,6 +40,7 @@
 		97030A35283CC822004D9D88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97030A3B283CEA4D004D9D88 /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
 		97030A3D283D2B07004D9D88 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		9764BFBA28465F3C00D0CA67 /* FavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesService.swift; sourceTree = "<group>"; };
 		97672FB3283FC93400478FBD /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		97672FB5283FC95100478FBD /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		97672FB7283FC96E00478FBD /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -126,6 +128,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9764BFBC28465F4800D0CA67 /* FavoritesService */ = {
+			isa = PBXGroup;
+			children = (
+				9764BFBA28465F3C00D0CA67 /* FavoritesService.swift */,
+			);
+			path = FavoritesService;
+			sourceTree = "<group>";
+		};
 		97672FAA283FC83000478FBD /* CryptoStocksScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				97672FAE283FC8AD00478FBD /* Network Service */,
+				9764BFBC28465F4800D0CA67 /* FavoritesService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -326,6 +337,7 @@
 				97030A2C283CC821004D9D88 /* StocksViewController.swift in Sources */,
 				97BAC7FC28421155002BF05E /* NSObjectExtension.swift in Sources */,
 				97BAC7F628420B00002BF05E /* StocksPresenter.swift in Sources */,
+				9764BFBB28465F3C00D0CA67 /* FavoritesService.swift in Sources */,
 				97672FB8283FC96E00478FBD /* NetworkError.swift in Sources */,
 				97BAC8182842A23D002BF05E /* StockPricesModel.swift in Sources */,
 				97BAC7FE284211CE002BF05E /* StocksRouter.swift in Sources */,

@@ -9,6 +9,8 @@ import UIKit
 
 final class StockCell: UITableViewCell {
     
+    private var favouriteAction: (() -> Void)?
+    
     lazy var cellView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -47,11 +49,14 @@ final class StockCell: UITableViewCell {
     }()
     
     private lazy var starButton: UIButton = {
+
         let button = UIButton()
         let colorForStar = UIColor(r: 186, g: 186, b: 186)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "star.fill"), for: .normal)
         button.tintColor = colorForStar
+        button.setImage(.checkmark, for: .selected)
+        button.addTarget(self, action: #selector(starButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -85,12 +90,27 @@ final class StockCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        favouriteAction = nil
+    }
+    
     func configure(with model: StocksModelProtocol) {
         symbolLabel.text = model.symbol
         cryptoNameLabel.text = model.name
         currentPriceLabel.text = model.price
         changedPriceLabel.text = model.priceChanged
         changedPriceLabel.textColor = { model.changeColor }()
+        starButton.isSelected = model.isFavorite
+        favouriteAction = {
+            model.setFavourite()
+        }
+    }
+    
+    @objc private func starButtonPressed() {
+        starButton.isSelected.toggle()
+        favouriteAction?()
     }
     
     private func setUpViews() {

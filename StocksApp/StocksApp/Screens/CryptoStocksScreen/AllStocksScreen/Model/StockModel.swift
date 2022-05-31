@@ -17,14 +17,19 @@ protocol StocksModelProtocol {
     var changeColor: UIColor { get }
     
     var isFavorite: Bool { get set }
+    
+    func setFavourite()
 }
 
 final class StockModel: StocksModelProtocol {
     
     private let stock: Stock
+    private let favoriteService: FavoriteServiceProtocol
     
     init(stock: Stock) {
         self.stock = stock
+        favoriteService = ModuleBuilder.shared.favouriteService
+        isFavorite = favoriteService.isFavourite(for: id)
     }
 
     
@@ -59,6 +64,15 @@ final class StockModel: StocksModelProtocol {
 
     
     var isFavorite: Bool = false
+    
+    func setFavourite() {
+        isFavorite.toggle()
+        
+        if isFavorite {
+            favoriteService.save(id: id)
+        }
+    }
+    
 }
 
 

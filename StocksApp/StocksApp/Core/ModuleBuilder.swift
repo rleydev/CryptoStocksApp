@@ -17,6 +17,8 @@ final class ModuleBuilder {
     }()
     static let shared: ModuleBuilder = .init()
     
+    let favouriteService: FavoriteServiceProtocol = FavoritesLocalService()
+    
     private func networkService() -> NetworkService {
         network
     }
