@@ -18,18 +18,21 @@ protocol StocksModelProtocol {
     
     var isFavorite: Bool { get set }
     
+    var starColor: UIColor { get set }
+    
     func setFavourite()
 }
 
 final class StockModel: StocksModelProtocol {
     
     private let stock: Stock
-    private let favoriteService: FavoriteServiceProtocol
+    private var favoriteService: FavoriteServiceProtocol
+    
     
     init(stock: Stock) {
         self.stock = stock
         favoriteService = ModuleBuilder.shared.favouriteService
-        isFavorite = favoriteService.isFavourite(for: id)
+        isFavorite = favoriteService.isFavorite(for: id)
     }
 
     
@@ -63,15 +66,28 @@ final class StockModel: StocksModelProtocol {
     }
 
     
-    var isFavorite: Bool = false
+    lazy var isFavorite: Bool = false
+    
+    var starColor: UIColor = {
+        let color = UIColor()
+        return color
+    }()
+    
+    let unselectedColorForStar = UIColor(r: 186, g: 186, b: 186)
+    let selectedColorForStar = UIColor(r: 255, g: 202, b: 28)
     
     func setFavourite() {
         isFavorite.toggle()
         
         if isFavorite {
             favoriteService.save(id: id)
+            starColor = selectedColorForStar
+        } else {
+            favoriteService.remove(id: id)
+            starColor = unselectedColorForStar
         }
     }
+        
     
 }
 

@@ -12,6 +12,7 @@ protocol StocksViewProtocol: AnyObject {
     func updateView()
     func updateView(withLoader isLoading: Bool)
     func updateView(withError message: String)
+
 }
 
 
@@ -28,7 +29,6 @@ protocol StocksPresenterProtocol {
 
 
 final class StocksPresenter: StocksPresenterProtocol {
-    
 
     private let service: StocksServiceProtocol
     
@@ -38,11 +38,14 @@ final class StocksPresenter: StocksPresenterProtocol {
         stocks.count
     }
     
+    
+    
     init(service: StocksServiceProtocol) {
         self.service = service
     }
     
     weak var view: StocksViewProtocol?
+    
     
     func loadView() {
         view?.updateView(withLoader: true)

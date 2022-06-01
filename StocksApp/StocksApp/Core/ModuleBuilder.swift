@@ -17,7 +17,7 @@ final class ModuleBuilder {
     }()
     static let shared: ModuleBuilder = .init()
     
-    let favouriteService: FavoriteServiceProtocol = FavoritesLocalService()
+    let favouriteService: FavoriteServiceProtocol = FavoritesServiceFileManager()
     
     private func networkService() -> NetworkService {
         network
@@ -34,7 +34,10 @@ final class ModuleBuilder {
     }
     
     func secondVC() -> UIViewController {
-        UIViewController()
+        let presenter = FavoriteStocksPresenter(service: stockService())
+        let view = FavoritesStocksView(presenter: presenter)
+        presenter.view = view
+        return view
         
     }
     
@@ -48,7 +51,7 @@ final class ModuleBuilder {
         stocksVC.tabBarItem = UITabBarItem(title: "All Crypto", image: UIImage(systemName: "chart.line.uptrend.xyaxis"), tag: 0)
         
         let secondVC = secondVC()
-        secondVC.tabBarItem = UITabBarItem(title: "Important", image: UIImage(systemName: "star"), tag: 1)
+        secondVC.tabBarItem = UITabBarItem(title: "Favorite", image: UIImage(systemName: "star"), tag: 1)
         
         let thirdVC = thirdVC()
         thirdVC.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 2)

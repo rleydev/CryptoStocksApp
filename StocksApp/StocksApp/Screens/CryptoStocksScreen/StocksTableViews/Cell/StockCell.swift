@@ -48,14 +48,13 @@ final class StockCell: UITableViewCell {
         return label
     }()
     
-    private lazy var starButton: UIButton = {
-
+    lazy var starButton: UIButton = {
         let button = UIButton()
-        let colorForStar = UIColor(r: 186, g: 186, b: 186)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        button.tintColor = colorForStar
-        button.setImage(.checkmark, for: .selected)
+        button.setImage(UIImage(systemName: "star.fill"), for: .selected)
+//        button.tintColor = UIColor(r: 255, g: 202, b: 28)
+        button.tintColor = UIColor(r: 186, g: 186, b: 186)
         button.addTarget(self, action: #selector(starButtonPressed), for: .touchUpInside)
         return button
     }()
@@ -86,13 +85,13 @@ final class StockCell: UITableViewCell {
         setUpConstrains()
     }
     
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
         favouriteAction = nil
     }
     
@@ -105,10 +104,13 @@ final class StockCell: UITableViewCell {
         starButton.isSelected = model.isFavorite
         favouriteAction = {
             model.setFavourite()
+            self.starButton.tintColor = model.starColor
+            
+            
         }
     }
     
-    @objc private func starButtonPressed() {
+    @objc func starButtonPressed() {
         starButton.isSelected.toggle()
         favouriteAction?()
     }

@@ -1,24 +1,20 @@
 //
-//  StocksViewController.swift
+//  FavoritesStocksView.swift
 //  StocksApp
 //
-//  Created by Arthur Lee on 24.05.2022.
+//  Created by Arthur Lee on 01.06.2022.
 //
 
 import UIKit
 
-final class StocksViewController: UIViewController {
+final class FavoritesStocksView: UIViewController {
     
-    private var presenter: StocksPresenterProtocol
+    private var presenter: FavoriteStocksPresenterProtocol
     
-    init(presenter: StocksPresenterProtocol) {
+    init(presenter: FavoriteStocksPresenterProtocol) {
         self.presenter = presenter
         
         super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     
@@ -29,25 +25,36 @@ final class StocksViewController: UIViewController {
         tableView.separatorStyle = .none
         return tableView
     }()
-
-    private let colorForOneCell = UIColor(r: 240, g: 244, b: 247)
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private let colorForOneCell = UIColor(r: 240, g: 244, b: 247)
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUpTableViewView()
         setUpSubViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
         presenter.loadView()
         
     }
     
+
     private func setUpTableViewView() {
         view.backgroundColor = .white
         tableView.dataSource = self
         tableView.delegate = self
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.topItem?.title = "Crypto Stocks"
+        navigationController?.navigationBar.topItem?.title = "Favorite"
     }
-
+   
     private func setUpSubViews() {
         
         view.addSubview(tableView)
@@ -57,14 +64,11 @@ final class StocksViewController: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
     }
-    
-    
-    private func showError(message: String) {
-        print(message)
-    }
+
 }
 
-extension StocksViewController: UITableViewDataSource {
+extension FavoritesStocksView: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         presenter.itemCount
     }
@@ -78,44 +82,44 @@ extension StocksViewController: UITableViewDataSource {
             cell.cellView.backgroundColor = .white
         }
         cell.configure(with: presenter.model(for: indexPath))
+        cell.starButton.tintColor = UIColor(r: 255, g: 202, b: 28)
+        cell.starButton.isSelected = true
         return cell
+    }
+    
+    
+}
+
+extension FavoritesStocksView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    let service = StocksService(client: Network())
+    let stockPresenter = StockPresenter(with: presenter.model(for: indexPath).id, withService: service)
+    let vc = StockViewController(with: stockPresenter)
+    vc.presenter.loadGraphData(with: presenter.model(for: indexPath).id)
+
+    // conf items
+    vc.configureLabelViews(with: presenter.stocks[indexPath.row])
+    
+// Graph chart will be set in STOCKViewcontroller
+    
+    navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
 
-extension StocksViewController: StocksViewProtocol {
- 
-    
+extension FavoritesStocksView: FavoriteStocksViewProtocol {
     func updateView() {
         tableView.reloadData()
     }
     
     func updateView(withLoader isLoading: Bool) {
-        print("Loader is -", isLoading, "at -", Date())
+        print(isLoading, "true")
     }
     
     func updateView(withError message: String) {
-        print("Error -", message)
+        print(message, "error")
     }
     
+    
 }
-
-extension StocksViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let service = StocksService(client: Network())
-        let stockPresenter = StockPresenter(with: presenter.model(for: indexPath).id, withService: service)
-        let vc = StockViewController(with: stockPresenter)
-        vc.presenter.loadGraphData(with: presenter.model(for: indexPath).id)
-        // conf items
-        vc.configureLabelViews(with: presenter.stocks[indexPath.row])
-        
-// Graph chart will be set in STOCKViewcontroller
-        
-        navigationController?.pushViewController(vc, animated: true)
-    }
-}
-
-
-
-
-

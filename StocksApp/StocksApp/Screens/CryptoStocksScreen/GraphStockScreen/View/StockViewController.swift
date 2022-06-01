@@ -9,6 +9,8 @@ import UIKit
 
 final class StockViewController: UIViewController {
     
+    private var favouriteAction: (() -> Void)?
+    
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -72,7 +74,8 @@ final class StockViewController: UIViewController {
     }()
     
     private lazy var starButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(image: UIImage(systemName: "star") , style: .plain, target: self, action: nil)
+        let button = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(starButtonPressed))
+        button.setBackgroundImage(UIImage(systemName: "star"), for: .highlighted, style: .plain, barMetrics: .default)
         return button
         
     }()
@@ -98,19 +101,34 @@ final class StockViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+    }
+    
     func configureLabelViews(with model: StocksModelProtocol) {
         titleLabel.text = model.symbol
         subtitleLabel.text = model.name
         currentPriceLabel.text = model.price
         pricePercentageLabel.text = model.priceChanged
         pricePercentageLabel.textColor = { model.changeColor }()
-        
+        starButton.isSelected = model.isFavorite
+        favouriteAction = {
+            model.setFavourite()
+            self.starButton.tintColor = model.starColor
+        }
     }
     
     func configureGraphChart(with graphData: StockPricesModelProtocol) {
         // configure graph from
 //        graphData.prices
         
+    }
+    
+    @objc func starButtonPressed() {
+        starButton.isSelected.toggle()
+        favouriteAction?()
+
     }
     
     private func setupViews() {
@@ -160,5 +178,8 @@ final class StockViewController: UIViewController {
     }
 
 }
+
+
+
 
 
