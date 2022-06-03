@@ -11,65 +11,79 @@ final class StockViewController: UIViewController {
     
     private let stock: StockGraphModel
     
-    private lazy var titleStackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
+        
+        let stackView = UIStackView()
+        
+        stackView.axis = .vertical
+        stackView.spacing = 4
+        
+        return stackView
+    }()
+    
+    private lazy var titleLabel: UILabel = {
+        
         let titleLabel = UILabel()
+        
         titleLabel.textAlignment = .center
         titleLabel.text = stock.symbol.uppercased()
         titleLabel.font = UIFont(name: "Montserrat", size: 18)
         titleLabel.font = .boldSystemFont(ofSize: 18)
-        titleLabel.textColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
+        titleLabel.textColor = UIColor.ColorsForLabels.titleLabel
+        
+        return titleLabel
+    }()
+    
+    private lazy var subtitleLabel: UILabel = {
+        
         let subtitleLabel = UILabel()
+        
         subtitleLabel.textAlignment = .center
         subtitleLabel.text = stock.name
         subtitleLabel.font = UIFont(name: "Montserrat-SemiBold", size: 12)
         subtitleLabel.font = .systemFont(ofSize: 12)
-        subtitleLabel.textColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
-        let stackView = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
-        stackView.axis = .vertical
-        stackView.spacing = 4
-        return stackView
+        subtitleLabel.textColor = UIColor.ColorsForLabels.titleLabel
+        
+        return subtitleLabel
     }()
     
     private lazy var currentPriceLabel: UILabel = {
+        
         let label = UILabel()
+        
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = String(format: "$%.2f", stock.currentPrice)
         label.font = UIFont(name: "Montserrat", size: 28)
-        label.frame = CGRect(x: 0, y: 0, width: 98, height: 32)
         label.font = .boldSystemFont(ofSize: 28)
-        label.textAlignment = .center
-        label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.01
-        let color = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
-        label.textColor = color
+        label.textColor = UIColor.ColorsForLabels.titleLabel
+        
         return label
     }()
     
     private lazy var pricePercentageLabel: UILabel = {
+        
         let label = UILabel()
+        
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "\(String(format: "%.2f", stock.changePrice))$ (\(String(format: "%.2f", stock.changePercentage))%)"
         label.font = UIFont(name: "Montserrat", size: 12)
-        label.frame = CGRect(x: 0, y: 0, width: 78, height: 16)
         label.font = .boldSystemFont(ofSize: 12)
-        label.textAlignment = .center
-        label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.01
-        let color = UIColor(red: 0.14, green: 0.7, blue: 0.364, alpha: 1)
-        label.textColor = color
+        label.textColor = UIColor.ColorsForLabels.pricePercentageLabel
+        
         return label
     }()
     
     private lazy var starButton: UIBarButtonItem = {
         let button = UIBarButtonItem(image: UIImage(systemName: "star") , style: .plain, target: self, action: nil)
-        return button
         
+        return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        navigationItem.titleView = titleStackView
         setupViews()
         setUpConstrains()
         navigationSetup()
@@ -87,20 +101,24 @@ final class StockViewController: UIViewController {
     private func setupViews() {
         view.addSubview(currentPriceLabel)
         view.addSubview(pricePercentageLabel)
+        setUpStackView()
+        navigationItem.titleView = stackView
         navigationItem.rightBarButtonItem = starButton
+    }
+    
+    private func setUpStackView() {
+        stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(subtitleLabel)
     }
     
     private func setUpConstrains() {
         
         /// Label 1
-        currentPriceLabel.widthAnchor.constraint(equalToConstant: 98).isActive = true
-        currentPriceLabel.heightAnchor.constraint(equalToConstant: 32).isActive = true
-        currentPriceLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 2).isActive = true
         currentPriceLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 162).isActive = true
+        currentPriceLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 2).isActive = true
+        
         
         /// Label 2
-        pricePercentageLabel.widthAnchor.constraint(equalToConstant: 78).isActive = true
-        pricePercentageLabel.heightAnchor.constraint(equalToConstant: 16).isActive = true
         pricePercentageLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
         pricePercentageLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 202).isActive = true
         
