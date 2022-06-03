@@ -26,14 +26,14 @@ final class FavoritesServiceFileManager: FavoriteServiceProtocol {
     
     func save(id: String) {
         favoriteIds.append(id)
-        updateRepo()
+        updateRepo(with: id)
     }
     
     func remove(id: String) {
         if let index = favoriteIds.firstIndex(where: { $0 == id }) {
             favoriteIds.remove(at: index)
         }
-        updateRepo()
+        updateRepo(with: id)
     }
     
     func isFavorite(for id: String) -> Bool {
@@ -41,10 +41,12 @@ final class FavoritesServiceFileManager: FavoriteServiceProtocol {
     }
     
     
-    private func updateRepo() {
+    private func updateRepo(with id: String) {
         do {
             let data = try JSONEncoder().encode(favoriteIds)
             try data.write(to: path)
+            NotificationCenter.default.post(name: NSNotification.Name.favoriteNotification, object: nil, userInfo: ["id": id])
+            
         } catch {
             print("FileManager writeError -", error.localizedDescription)
         }

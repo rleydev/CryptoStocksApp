@@ -30,8 +30,9 @@
 		97BAC7FC28421155002BF05E /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC7FB28421155002BF05E /* NSObjectExtension.swift */; };
 		97BAC7FE284211CE002BF05E /* StocksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC7FD284211CE002BF05E /* StocksRouter.swift */; };
 		97BAC8002842124C002BF05E /* StockResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC7FF2842124C002BF05E /* StockResponse.swift */; };
-		97BAC80228421AE3002BF05E /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC80128421AE3002BF05E /* ModuleBuilder.swift */; };
-		97BAC8182842A23D002BF05E /* StockPricesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC8172842A23D002BF05E /* StockPricesModel.swift */; };
+		97BAC80228421AE3002BF05E /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC80128421AE3002BF05E /* Assembly.swift */; };
+		97EA1E9A28493608006D1592 /* FavoritesUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EA1E9928493608006D1592 /* FavoritesUpdateService.swift */; };
+		97EA1E9D28493F24006D1592 /* ChartsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EA1E9C28493F24006D1592 /* ChartsResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,8 +61,9 @@
 		97BAC7FB28421155002BF05E /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
 		97BAC7FD284211CE002BF05E /* StocksRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksRouter.swift; sourceTree = "<group>"; };
 		97BAC7FF2842124C002BF05E /* StockResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockResponse.swift; sourceTree = "<group>"; };
-		97BAC80128421AE3002BF05E /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
-		97BAC8172842A23D002BF05E /* StockPricesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPricesModel.swift; sourceTree = "<group>"; };
+		97BAC80128421AE3002BF05E /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		97EA1E9928493608006D1592 /* FavoritesUpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesUpdateService.swift; sourceTree = "<group>"; };
+		97EA1E9C28493F24006D1592 /* ChartsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,19 +107,11 @@
 		9764BFB6284637FF00D0CA67 /* GraphStockScreen */ = {
 			isa = PBXGroup;
 			children = (
+				97EA1E9B28493F17006D1592 /* Services */,
 				9764BFB92846383900D0CA67 /* View */,
 				9764BFB82846382200D0CA67 /* Presenter */,
-				9764BFB72846381500D0CA67 /* Model */,
 			);
 			path = GraphStockScreen;
-			sourceTree = "<group>";
-		};
-		9764BFB72846381500D0CA67 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				97BAC8172842A23D002BF05E /* StockPricesModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		9764BFB82846382200D0CA67 /* Presenter */ = {
@@ -142,6 +136,7 @@
 				9764BFBA28465F3C00D0CA67 /* UserDefaults.swift */,
 				9764BFC228467BCB00D0CA67 /* FileManager.swift */,
 				9764BFC428467BE800D0CA67 /* FavoritesServiceProtocol.swift */,
+				97EA1E9928493608006D1592 /* FavoritesUpdateService.swift */,
 			);
 			path = FavoritesService;
 			sourceTree = "<group>";
@@ -175,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				97672FAF283FC8C900478FBD /* Service */,
-				978D7A15284758F100DC7D7A /* StocksTableViews */,
+				978D7A15284758F100DC7D7A /* StocksListsViews */,
 				9764BFB6284637FF00D0CA67 /* GraphStockScreen */,
 			);
 			path = CryptoStocksScreen;
@@ -243,7 +238,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		978D7A15284758F100DC7D7A /* StocksTableViews */ = {
+		978D7A15284758F100DC7D7A /* StocksListsViews */ = {
 			isa = PBXGroup;
 			children = (
 				97672FB0283FC8E900478FBD /* Model */,
@@ -251,7 +246,7 @@
 				9764BFC62846B42800D0CA67 /* FavoriteStocksScreen */,
 				97BAC7F428420AC7002BF05E /* AllStocksScreen */,
 			);
-			path = StocksTableViews;
+			path = StocksListsViews;
 			sourceTree = "<group>";
 		};
 		97BAC7F328420AA1002BF05E /* Presenter */ = {
@@ -292,7 +287,7 @@
 		97BAC7F928421131002BF05E /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				97BAC80128421AE3002BF05E /* ModuleBuilder.swift */,
+				97BAC80128421AE3002BF05E /* Assembly.swift */,
 				97672FAD283FC8A000478FBD /* Services */,
 				97BAC7FA28421136002BF05E /* Extensions */,
 			);
@@ -306,6 +301,14 @@
 				97030A3D283D2B07004D9D88 /* UIColorExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		97EA1E9B28493F17006D1592 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				97EA1E9C28493F24006D1592 /* ChartsResponse.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,15 +390,16 @@
 				97BAC7FC28421155002BF05E /* NSObjectExtension.swift in Sources */,
 				97BAC7F628420B00002BF05E /* StocksPresenter.swift in Sources */,
 				9764BFBB28465F3C00D0CA67 /* UserDefaults.swift in Sources */,
+				97EA1E9D28493F24006D1592 /* ChartsResponse.swift in Sources */,
 				9764BFC528467BE800D0CA67 /* FavoritesServiceProtocol.swift in Sources */,
+				97EA1E9A28493608006D1592 /* FavoritesUpdateService.swift in Sources */,
 				97672FB8283FC96E00478FBD /* NetworkError.swift in Sources */,
-				97BAC8182842A23D002BF05E /* StockPricesModel.swift in Sources */,
 				97BAC7FE284211CE002BF05E /* StocksRouter.swift in Sources */,
 				97672FBF283FCBBB00478FBD /* StocksService.swift in Sources */,
 				97672FBC283FCA2E00478FBD /* StockModel.swift in Sources */,
 				97030A3E283D2B07004D9D88 /* UIColorExtension.swift in Sources */,
 				97672FB4283FC93400478FBD /* Router.swift in Sources */,
-				97BAC80228421AE3002BF05E /* ModuleBuilder.swift in Sources */,
+				97BAC80228421AE3002BF05E /* Assembly.swift in Sources */,
 				97672FE3283FFDE400478FBD /* StockViewController.swift in Sources */,
 				97BAC8002842124C002BF05E /* StockResponse.swift in Sources */,
 				71D0B1F6284291A40020A708 /* StockPresenter.swift in Sources */,

@@ -73,13 +73,6 @@ final class StockViewController: UIViewController {
         return graphView
     }()
     
-    private lazy var starButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(starButtonPressed))
-        button.setBackgroundImage(UIImage(systemName: "star"), for: .highlighted, style: .plain, barMetrics: .default)
-        return button
-        
-    }()
-    
     var presenter: StockPresentProtocol
     
     init(with presenter: StockPresentProtocol) {
@@ -98,7 +91,9 @@ final class StockViewController: UIViewController {
         setupViews()
         setUpConstrains()
         navigationSetup()
-        
+        presenter.loadView()
+        setupFavoriteButton()
+        configureLabelViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -106,29 +101,26 @@ final class StockViewController: UIViewController {
 
     }
     
-    func configureLabelViews(with model: StocksModelProtocol) {
-        titleLabel.text = model.symbol
-        subtitleLabel.text = model.name
-        currentPriceLabel.text = model.price
-        pricePercentageLabel.text = model.priceChanged
-        pricePercentageLabel.textColor = { model.changeColor }()
-        starButton.isSelected = model.isFavorite
-        favouriteAction = {
-            model.setFavourite()
-            self.starButton.tintColor = model.starColor
-        }
+    func configureLabelViews() {
+        titleLabel.text = presenter.symbol
+        subtitleLabel.text = presenter.title
+        currentPriceLabel.text = presenter.currentPrice
+        pricePercentageLabel.text = presenter.priceChange
+        pricePercentageLabel.textColor = { presenter.changeColor }()
     }
     
-    func configureGraphChart(with graphData: StockPricesModelProtocol) {
-        // configure graph from
-//        graphData.prices
-        
+    private func setupFavoriteButton() {
+        let button = UIButton()
+        button.isSelected = presenter.favoriteButtonIsSelected
+        button.setImage(UIImage(named: "starOffNavBar"), for: .normal)
+        button.setImage(UIImage(named: "starOn"), for: .selected)
+        button.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
     }
     
-    @objc func starButtonPressed() {
-        starButton.isSelected.toggle()
-        favouriteAction?()
-
+    @objc private func favoriteButtonTapped(sender: UIButton) {
+        sender.isSelected.toggle()
+        presenter.favoriteButtonTapped() 
     }
     
     private func setupViews() {
@@ -138,7 +130,6 @@ final class StockViewController: UIViewController {
         setUpStackView()
         view.addSubview(stackView)
         navigationItem.titleView = stackView
-        navigationItem.rightBarButtonItem = starButton
     }
     
     private func setUpStackView() {
@@ -179,7 +170,21 @@ final class StockViewController: UIViewController {
 
 }
 
-
+extension StockViewController: StockViewProtocol {
+    func updateView() {
+        
+    }
+    
+    func updateView(withLoader isLoading: Bool) {
+        
+    }
+    
+    func updateView(withError message: String) {
+        
+    }
+    
+    
+}
 
 
 

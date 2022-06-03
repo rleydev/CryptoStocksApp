@@ -11,8 +11,8 @@ protocol StocksServiceProtocol {
     func getStocks(currency: String, count: String, completion: @escaping (Result<[Stock], NetworkError>) -> Void)
     func getStocks(currency: String, completion: @escaping (Result<[Stock], NetworkError>) -> Void)
     func getStocks(completion: @escaping (Result<[Stock], NetworkError>) -> Void)
-    func getStock(id: String, currency: String, daysCount: String, interval: String, completion: @escaping (Result<StockPrices, NetworkError>) -> Void)
-    func getStock(id: String, completion: @escaping (Result<StockPrices, NetworkError>) -> Void)
+    
+    func getCharts(id: String, currency: String, days: String, isDaily: Bool, completion: @escaping (Result<Charts, NetworkError>) -> Void)
 }
 
 
@@ -28,15 +28,14 @@ final class StocksService: StocksServiceProtocol {
         client.execute(with: StocksRouter.stocks(currency: currency, count: count), completion: completion)
     }
     
-    func getStock(id: String, currency: String, daysCount: String, interval: String, completion: @escaping (Result<StockPrices, NetworkError>) -> Void) {
-        client.execute(with: StocksRouter.stock(id: id, currency: currency, daysCount: daysCount, intervalDaily: interval), completion: completion)
+    func getCharts(id: String, currency: String, days: String, isDaily: Bool, completion: @escaping (Result<Charts, NetworkError>) -> Void) {
+        client.execute(with: StocksRouter.stock(id: id, currency: currency, daysCount: days, intervalDaily: isDaily), completion: completion)
     }
     
+
 }
 
-
 extension StocksServiceProtocol {
-    
     func getStocks(currency: String, completion: @escaping (Result<[Stock], NetworkError>) -> Void) {
         getStocks(currency: currency, count: "100", completion: completion)
     }
@@ -45,9 +44,4 @@ extension StocksServiceProtocol {
         getStocks(currency: "usd", completion: completion)
     }
     
-    func getStock(id: String, completion: @escaping (Result<StockPrices, NetworkError>) -> Void) {
-        getStock(id: id, currency: "usd", daysCount: "600", interval: "daily", completion: completion)
-    }
-    
-
 }

@@ -5,11 +5,11 @@
 //  Created by Arthur Lee on 28.05.2022.
 //
 
-import Foundation
 import UIKit
 
 protocol StocksViewProtocol: AnyObject {
     func updateView()
+    func updateCell(for indexPath: IndexPath)
     func updateView(withLoader isLoading: Bool)
     func updateView(withError message: String)
 
@@ -23,8 +23,6 @@ protocol StocksPresenterProtocol {
     var itemCount: Int { get }
     func loadView()
     func model(for indexPath: IndexPath) -> StocksModelProtocol
-    
-    
 }
 
 
@@ -38,8 +36,6 @@ final class StocksPresenter: StocksPresenterProtocol {
         stocks.count
     }
     
-    
-    
     init(service: StocksServiceProtocol) {
         self.service = service
     }
@@ -48,6 +44,8 @@ final class StocksPresenter: StocksPresenterProtocol {
     
     
     func loadView() {
+        startObservingNotifications()
+        
         view?.updateView(withLoader: true)
 
 // Getting back with data and delete loader
@@ -71,3 +69,13 @@ final class StocksPresenter: StocksPresenterProtocol {
     
 }
 
+extension StocksPresenter: FavoritesUpdateServiceProtocol {
+    
+    func setFavorite(notification: Notification) {
+        guard let id = notification.stockID else { return }
+        guard let index = stocks.firstIndex(where: { $0.id == id }) else { return }
+        let indexPath = IndexPath(row: index, section: 0)
+        view?.updateCell(for: indexPath)
+    }
+
+}

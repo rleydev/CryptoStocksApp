@@ -51,10 +51,9 @@ final class StockCell: UITableViewCell {
     lazy var starButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        button.setImage(UIImage(systemName: "star.fill"), for: .selected)
-//        button.tintColor = UIColor(r: 255, g: 202, b: 28)
-        button.tintColor = UIColor(r: 186, g: 186, b: 186)
+        button.setImage(UIImage(named: "starOff"), for: .normal)
+        button.setImage(UIImage(named: "starOn") , for: .selected)
+//        button.tintColor = UIColor(r: 186, g: 186, b: 186)
         button.addTarget(self, action: #selector(starButtonPressed), for: .touchUpInside)
         return button
     }()
@@ -104,14 +103,12 @@ final class StockCell: UITableViewCell {
         starButton.isSelected = model.isFavorite
         favouriteAction = {
             model.setFavourite()
-            self.starButton.tintColor = model.starColor
-            
             
         }
     }
     
-    @objc func starButtonPressed() {
-        starButton.isSelected.toggle()
+    @objc func starButtonPressed(sender: UIButton) {
+        sender.isSelected.toggle()
         favouriteAction?()
     }
     

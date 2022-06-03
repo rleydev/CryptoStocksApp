@@ -23,7 +23,3 @@ struct Stock: Decodable {
         case changePercentage = "price_change_percentage_24h"
     }
 }
-
-struct StockPrices: Decodable {
-    let prices: [[Double]]
-}

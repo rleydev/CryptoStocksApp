@@ -5,46 +5,88 @@
 //  Created by Arthur on 28.05.2022.
 //
 
-import Foundation
+import UIKit
+
+protocol StockViewProtocol: AnyObject {
+    func updateView()
+    func updateView(withLoader isLoading: Bool)
+    func updateView(withError message: String)
+}
+
 
 protocol StockPresentProtocol {
-//    var view: StockViewProtocol? { get set }
-    var id: String { get set }
-    var view: StocksViewProtocol? { get set }
-    func loadGraphData(with idOfStock: String)
+
+    var favoriteButtonIsSelected: Bool { get }
+    var title: String? { get }
+    var symbol: String? { get }
+    var currentPrice: String? { get }
+    var priceChange: String? { get }
+    var changeColor: UIColor? { get }
+    func favoriteButtonTapped()
+    func loadView()
 //    func model(for indexPath: IndexPath) -> StockPricesModelProtocol
-    init(with id: String, withService service: StocksServiceProtocol)
+
 }
 
 final class StockPresenter: StockPresentProtocol {
     
-    weak var view: StocksViewProtocol?
+    weak var view: StockViewProtocol?
     
-    var service: StocksServiceProtocol
+    private let model: StocksModelProtocol
+    
+    private let service: StocksServiceProtocol
+    
+    var title: String? {
+        model.name
+    }
+    
+    var symbol: String? {
+        model.symbol
+    }
+    
+    var currentPrice: String? {
+        model.price
+    }
 
-    var stockPrices: StockPricesModelProtocol?
+    var priceChange: String? {
+        model.priceChanged
+    }
+    
+    var changeColor: UIColor? {
+        model.changeColor
+    }
+    
+    var favoriteButtonIsSelected: Bool {
+        model.isFavorite
+    }
+    
 
-    var id: String
-
-    required init(with id: String, withService service: StocksServiceProtocol) {
-        self.id = id
+    init(model: StocksModelProtocol, service: StocksServiceProtocol) {
+        self.model = model
         self.service = service
     }
 
-
-    func loadGraphData(with idOfStock: String) {
-        id = idOfStock
-        service.getStock(id: id) { [weak self] result in
+    func loadView() {
+        
+        view?.updateView(withLoader: true)
+        
+        service.getCharts(id: model.id, currency: "usd", days: "100", isDaily: true) { [weak self] result in
+            
+            self?.view?.updateView(withLoader: false)
+            
             switch result {
-            case .success(let pricesOfStock):
-                self?.stockPrices = pricesOfStock as? StockPricesModelProtocol
-
-            case .failure(let error):
+            case .success(let charts):
+                self?.view?.updateView()
+                print("Graphs count -", charts.prices.map { $0.date })
+            case.failure(let error):
                 self?.view?.updateView(withError: error.localizedDescription)
             }
         }
-
-   }
+    }
+    
+    func favoriteButtonTapped() {
+        model.setFavourite()
+    }
  
     
 }
