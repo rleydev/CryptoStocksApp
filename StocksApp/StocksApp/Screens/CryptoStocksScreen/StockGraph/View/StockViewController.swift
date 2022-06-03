@@ -115,12 +115,11 @@ final class StockViewController: UIViewController {
         
         /// Label 1
         currentPriceLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 162).isActive = true
-        currentPriceLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 2).isActive = true
-        
+        currentPriceLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         /// Label 2
         pricePercentageLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
-        pricePercentageLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 202).isActive = true
+        pricePercentageLabel.topAnchor.constraint(equalTo: currentPriceLabel.bottomAnchor, constant: 8).isActive = true
         
     }
     
