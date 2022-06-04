@@ -36,13 +36,11 @@ final class StocksViewController: UIViewController {
         super.viewDidLoad()
         setUpTableViewView()
         setUpSubViews()
-        presenter.loadView()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        presenter.loadView()
     }
     
     private func setUpTableViewView() {
@@ -60,10 +58,7 @@ final class StocksViewController: UIViewController {
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
     }
-    
-
 }
 
 extension StocksViewController: UITableViewDataSource {
@@ -82,7 +77,22 @@ extension StocksViewController: UITableViewDataSource {
         cell.configure(with: presenter.model(for: indexPath))
         return cell
     }
-    
+}
+
+extension StocksViewController: UITableViewDelegate {
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            
+            let model = presenter.model(for: indexPath)
+            let detailedVC = Assembly.shared.detailedVC(for: model)
+            navigationController?.pushViewController(detailedVC, animated: true)
+    }
+}
+
+extension Notification {
+    var stockID: String? {
+        guard let userInfo = userInfo, let id = userInfo["id"] as? String else { return nil }
+        return id
+    }
 }
 
 extension StocksViewController: StocksViewProtocol {
@@ -105,22 +115,4 @@ extension StocksViewController: StocksViewProtocol {
     }
     
 }
-
-extension StocksViewController: UITableViewDelegate {
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            
-            let model = presenter.model(for: indexPath)
-            let detailedVC = Assembly.shared.detailedVC(for: model)
-            navigationController?.pushViewController(detailedVC, animated: true)
-    }
-}
-
-
-extension Notification {
-    var stockID: String? {
-        guard let userInfo = userInfo, let id = userInfo["id"] as? String else { return nil }
-        return id
-    }
-}
-
 

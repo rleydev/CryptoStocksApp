@@ -71,10 +71,12 @@ final class StocksPresenter: StocksPresenterProtocol {
 
 extension StocksPresenter: FavoritesUpdateServiceProtocol {
     
-    func setFavorite(notification: Notification) {
+    func setFavoriteNotification(notification: Notification) {
         guard let id = notification.stockID else { return }
         guard let index = stocks.firstIndex(where: { $0.id == id }) else { return }
         let indexPath = IndexPath(row: index, section: 0)
+    
+        stocks[index].isFavorite.toggle()
         view?.updateCell(for: indexPath)
     }
 

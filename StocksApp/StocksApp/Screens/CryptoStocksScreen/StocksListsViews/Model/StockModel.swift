@@ -67,6 +67,7 @@ final class StockModel: StocksModelProtocol {
     lazy var isFavorite: Bool = false
     
     func setFavourite() {
+        
         isFavorite.toggle()
         
         if isFavorite {

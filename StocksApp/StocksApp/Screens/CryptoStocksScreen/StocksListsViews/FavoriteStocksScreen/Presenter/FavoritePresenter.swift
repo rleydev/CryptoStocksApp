@@ -20,8 +20,6 @@ protocol FavoriteStocksPresenterProtocol {
     var itemCount: Int { get }
     func loadView()
     func model(for indexPath: IndexPath) -> StocksModelProtocol
-    
-    
 }
 
 final class FavoriteStocksPresenter: FavoriteStocksPresenterProtocol {
@@ -43,7 +41,6 @@ final class FavoriteStocksPresenter: FavoriteStocksPresenterProtocol {
     
     func loadView() {
         view?.updateView(withLoader: true)
-
 // Getting back with data and delete loader
         service.getStocks { [weak self] result in
             self?.view?.updateView(withLoader: false)

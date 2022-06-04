@@ -103,7 +103,6 @@ final class StockCell: UITableViewCell {
         starButton.isSelected = model.isFavorite
         favouriteAction = {
             model.setFavourite()
-            
         }
     }
     

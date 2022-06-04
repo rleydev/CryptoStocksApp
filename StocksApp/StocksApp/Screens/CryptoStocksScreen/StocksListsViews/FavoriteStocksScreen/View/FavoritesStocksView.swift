@@ -34,8 +34,7 @@ final class FavoritesStocksView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setUpTableViewView()
+        setUpTableView()
         setUpSubViews()
     }
     
@@ -45,12 +44,12 @@ final class FavoritesStocksView: UIViewController {
     }
     
 
-    private func setUpTableViewView() {
+    private func setUpTableView() {
         view.backgroundColor = .white
         tableView.dataSource = self
         tableView.delegate = self
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.topItem?.title = "Favorite"
+        navigationController?.navigationBar.topItem?.title = "Favorites"
     }
    
     private func setUpSubViews() {
