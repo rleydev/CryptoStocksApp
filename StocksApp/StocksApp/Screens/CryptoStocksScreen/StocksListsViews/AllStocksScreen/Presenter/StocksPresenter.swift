@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Algorithms
 
 protocol StocksViewProtocol: AnyObject {
     func updateView()
