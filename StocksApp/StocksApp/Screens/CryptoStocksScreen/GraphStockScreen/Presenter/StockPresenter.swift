@@ -8,7 +8,7 @@
 import UIKit
 
 protocol StockViewProtocol: AnyObject {
-    func updateView()
+    func updateView(with graphModel: GraphModel)
     func updateView(withLoader isLoading: Bool)
     func updateView(withError message: String)
 }
@@ -22,19 +22,23 @@ protocol StockPresentProtocol {
     var currentPrice: String? { get }
     var priceChange: String? { get }
     var changeColor: UIColor? { get }
+    var name: [String]? { get }
+    var titleForBuyButton: String? { get }
     func favoriteButtonTapped()
     func loadView()
-//    func model(for indexPath: IndexPath) -> StockPricesModelProtocol
 
 }
 
 final class StockPresenter: StockPresentProtocol {
-    
+        
     weak var view: StockViewProtocol?
     
     private let model: StocksModelProtocol
     
     private let service: StocksServiceProtocol
+    
+    var graphModel: GraphModel
+    
     
     var title: String? {
         model.name
@@ -60,26 +64,38 @@ final class StockPresenter: StockPresentProtocol {
         model.isFavorite
     }
     
+    var name: [String]? {
+        graphModel.periods.map { $0.name }
+    }
+    
+    var titleForBuyButton: String? {
+        model.priceForBuyButton
+    }
+    
 
-    init(model: StocksModelProtocol, service: StocksServiceProtocol) {
+    init(model: StocksModelProtocol, service: StocksServiceProtocol, graphModel: GraphModel) {
         self.model = model
         self.service = service
+        self.graphModel = graphModel
     }
 
     func loadView() {
         
         view?.updateView(withLoader: true)
         
-        service.getCharts(id: model.id, currency: "usd", days: "100", isDaily: true) { [weak self] result in
-            
-            self?.view?.updateView(withLoader: false)
-            
-            switch result {
-            case .success(let charts):
-                self?.view?.updateView()
-                print("Graphs count -", charts.prices.map { $0.date })
-            case.failure(let error):
-                self?.view?.updateView(withError: error.localizedDescription)
+        service.getCharts(id: model.id, currency: "usd", days: "365", isDaily: true) { [weak self] result in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self?.view?.updateView(withLoader: false)
+                
+                switch result {
+                case .success(let charts):
+                    self?.view?.updateView(with: self?.graphModel.build(from: charts) ?? GraphModel(periods: []))
+                    print(charts.prices.map { $0.price })
+                    print(charts.prices.map { $0.date })
+                    print(charts.prices.count)
+                case.failure(let error):
+                    self?.view?.updateView(withError: error.localizedDescription)
+                }
             }
         }
     }
@@ -87,6 +103,4 @@ final class StockPresenter: StockPresentProtocol {
     func favoriteButtonTapped() {
         model.setFavourite()
     }
- 
-    
 }

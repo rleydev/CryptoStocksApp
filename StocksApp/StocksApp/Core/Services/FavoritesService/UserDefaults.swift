@@ -10,7 +10,6 @@ import UIKit
 
 final class FavoriteServiceUserDefaults: FavoriteServiceProtocol {
 
-
     private let key = "favourite_key"
     private lazy var favoriteIds: [String] = {
         guard let data = UserDefaults.standard.object(forKey: key) as? Data, let ids = try? JSONDecoder().decode([String].self, from: data)

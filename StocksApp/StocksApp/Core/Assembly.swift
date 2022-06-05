@@ -55,7 +55,7 @@ final class Assembly {
     }
     
     func detailedVC(for model: StocksModelProtocol) -> UIViewController {
-        let presenter = StockPresenter(model: model, service: stockService)
+        let presenter = StockPresenter(model: model, service: stockService, graphModel: GraphModel(periods:[]))
         let view = StockViewController(with: presenter)
         presenter.view = view
         return view

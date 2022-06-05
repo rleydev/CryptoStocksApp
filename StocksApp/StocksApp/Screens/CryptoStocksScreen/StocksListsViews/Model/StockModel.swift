@@ -15,6 +15,7 @@ protocol StocksModelProtocol {
     var price: String { get }
     var priceChanged: String { get }
     var changeColor: UIColor { get }
+    var priceForBuyButton: String { get }
     
     var isFavorite: Bool { get set }
     
@@ -61,6 +62,10 @@ final class StockModel: StocksModelProtocol {
     
     var changeColor: UIColor {
         stock.change >= 0 ? UIColor(r: 36, g: 178, b: 93) : .red
+    }
+    
+    var priceForBuyButton: String {
+        "Buy for $\(String(format: "%.2f", stock.price + 1.32))"
     }
 
     

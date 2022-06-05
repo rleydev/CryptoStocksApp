@@ -18,6 +18,14 @@ final class StockViewController: UIViewController {
         return stackView
     }()
     
+    private lazy var graphContainerView: GraphContainerView = {
+        let view = GraphContainerView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        
+        return view
+    }()
+    
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.textAlignment = .center
@@ -66,12 +74,24 @@ final class StockViewController: UIViewController {
         return label
     }()
     
-    private lazy var graphView: UIView = {
-        let graphView = UIView()
-        graphView.translatesAutoresizingMaskIntoConstraints = false
-        graphView.backgroundColor = .red
-        return graphView
+    private lazy var buyStockButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .black
+        button.titleLabel?.textColor = .white
+        button.titleLabel?.textAlignment = .center
+        button.titleLabel?.font = UIFont(name: "Montserrat", size: 12)
+        button.layer.cornerRadius = 12
+        button.addTarget(self, action: #selector(buyStockButtonTapped), for: .touchUpInside)
+        return button
     }()
+
+    
+    override var hidesBottomBarWhenPushed: Bool {
+        get { true }
+        set { super.hidesBottomBarWhenPushed = newValue }
+    }
     
     var presenter: StockPresentProtocol
     
@@ -107,6 +127,15 @@ final class StockViewController: UIViewController {
         currentPriceLabel.text = presenter.currentPrice
         pricePercentageLabel.text = presenter.priceChange
         pricePercentageLabel.textColor = { presenter.changeColor }()
+        buyStockButton.setTitle(presenter.titleForBuyButton, for: .normal)
+    }
+    
+    @objc private func buyStockButtonTapped() {
+        let alert = UIAlertController(title: "Buy cryptocurrency", message: "By means of approval the operation you won't be able to cancel it!", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default))
+        alert.addAction(UIAlertAction(title: "Buy", style: .default))
+        self.present(alert, animated: true, completion: nil)
     }
     
     private func setupFavoriteButton() {
@@ -126,10 +155,11 @@ final class StockViewController: UIViewController {
     private func setupViews() {
         view.addSubview(currentPriceLabel)
         view.addSubview(pricePercentageLabel)
-        view.addSubview(graphView)
         setUpStackView()
         view.addSubview(stackView)
         navigationItem.titleView = stackView
+        view.addSubview(graphContainerView)
+        view.addSubview(buyStockButton)
     }
     
     private func setUpStackView() {
@@ -151,11 +181,17 @@ final class StockViewController: UIViewController {
         pricePercentageLabel.heightAnchor.constraint(equalToConstant: 16).isActive = true
         pricePercentageLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
         pricePercentageLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 202).isActive = true
-        /// View
-        graphView.topAnchor.constraint(equalTo: view.topAnchor, constant: 248).isActive = true
-        graphView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        graphView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-        graphView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -212).isActive = true
+        
+        /// GraphView
+        graphContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        graphContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        graphContainerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 150).isActive = true
+        
+        /// Buy Stock Button
+        buyStockButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+        buyStockButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+        buyStockButton.topAnchor.constraint(equalTo: graphContainerView.bottomAnchor, constant: 75).isActive = true
+        buyStockButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
     }
     
     private func navigationSetup() {
@@ -171,12 +207,13 @@ final class StockViewController: UIViewController {
 }
 
 extension StockViewController: StockViewProtocol {
-    func updateView() {
-        
+    func updateView(with graphModel: GraphModel) {
+        graphContainerView.configureGraph(with: graphModel)
     }
+
     
     func updateView(withLoader isLoading: Bool) {
-        
+        graphContainerView.configure(with: isLoading)
     }
     
     func updateView(withError message: String) {

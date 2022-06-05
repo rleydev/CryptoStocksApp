@@ -83,6 +83,7 @@ extension StocksViewController: UITableViewDelegate {
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             
             let model = presenter.model(for: indexPath)
+    
             let detailedVC = Assembly.shared.detailedVC(for: model)
             navigationController?.pushViewController(detailedVC, animated: true)
     }

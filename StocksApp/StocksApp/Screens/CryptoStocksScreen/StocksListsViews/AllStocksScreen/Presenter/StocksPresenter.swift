@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Algorithms
 
 protocol StocksViewProtocol: AnyObject {
     func updateView()
@@ -14,8 +15,6 @@ protocol StocksViewProtocol: AnyObject {
     func updateView(withError message: String)
 
 }
-
-
 
 protocol StocksPresenterProtocol {
     var view: StocksViewProtocol? { get set }
@@ -31,7 +30,7 @@ final class StocksPresenter: StocksPresenterProtocol {
     private let service: StocksServiceProtocol
     
     var stocks: [StocksModelProtocol] = []
-    
+
     var itemCount: Int {
         stocks.count
     }
@@ -66,6 +65,7 @@ final class StocksPresenter: StocksPresenterProtocol {
     func model(for indexPath: IndexPath) -> StocksModelProtocol {
         stocks[indexPath.row]
     }
+    
     
 }
 
