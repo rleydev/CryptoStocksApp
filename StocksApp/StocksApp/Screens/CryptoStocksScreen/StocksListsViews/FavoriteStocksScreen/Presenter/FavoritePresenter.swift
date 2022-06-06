@@ -61,8 +61,4 @@ final class FavoriteStocksPresenter: FavoriteStocksPresenterProtocol {
     func model(for indexPath: IndexPath) -> StocksModelProtocol {
         stocks[indexPath.row]
     }
-    
 }
-
-
-

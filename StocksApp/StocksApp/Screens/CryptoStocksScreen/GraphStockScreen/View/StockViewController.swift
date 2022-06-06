@@ -96,11 +96,6 @@ final class StockViewController: UIViewController {
         configureLabelViews()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-    }
-    
     func configureLabelViews() {
         titleLabel.text = presenter.symbol
         subtitleLabel.text = presenter.title

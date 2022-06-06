@@ -53,7 +53,6 @@ final class StockCell: UITableViewCell {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "starOff"), for: .normal)
         button.setImage(UIImage(named: "starOn") , for: .selected)
-//        button.tintColor = UIColor(r: 186, g: 186, b: 186)
         button.addTarget(self, action: #selector(starButtonPressed), for: .touchUpInside)
         return button
     }()
