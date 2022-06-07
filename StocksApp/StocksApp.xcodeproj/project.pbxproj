@@ -26,6 +26,8 @@
 		97672FE3283FFDE400478FBD /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97672FE2283FFDE400478FBD /* StockViewController.swift */; };
 		978D7A0F28473C7500DC7D7A /* FavoritesStocksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D7A0E28473C7500DC7D7A /* FavoritesStocksView.swift */; };
 		978D7A1128473FDD00DC7D7A /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D7A1028473FDD00DC7D7A /* FavoritesPresenter.swift */; };
+		97AE7368284F530F00A12476 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 97AE7367284F530F00A12476 /* Kingfisher */; };
+		97AE736A284F539D00A12476 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE7369284F539D00A12476 /* UIImageViewExtension.swift */; };
 		97B1BD20284CA04C00BDB5A0 /* GraphContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B1BD1F284CA04C00BDB5A0 /* GraphContainerView.swift */; };
 		97B1BD26284CC1F700BDB5A0 /* GraphModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B1BD25284CC1F700BDB5A0 /* GraphModel.swift */; };
 		97B9913F284E812C001DDB3E /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 97B9913E284E812C001DDB3E /* Charts */; };
@@ -60,6 +62,7 @@
 		97672FE2283FFDE400478FBD /* StockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
 		978D7A0E28473C7500DC7D7A /* FavoritesStocksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStocksView.swift; sourceTree = "<group>"; };
 		978D7A1028473FDD00DC7D7A /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
+		97AE7369284F539D00A12476 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		97B1BD1F284CA04C00BDB5A0 /* GraphContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphContainerView.swift; sourceTree = "<group>"; };
 		97B1BD25284CC1F700BDB5A0 /* GraphModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphModel.swift; sourceTree = "<group>"; };
 		97BAC7F528420B00002BF05E /* StocksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksPresenter.swift; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97AE7368284F530F00A12476 /* Kingfisher in Frameworks */,
 				97B9913F284E812C001DDB3E /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,6 +327,7 @@
 			children = (
 				97BAC7FB28421155002BF05E /* NSObjectExtension.swift */,
 				97030A3D283D2B07004D9D88 /* UIColorExtension.swift */,
+				97AE7369284F539D00A12476 /* UIImageViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 			name = StocksApp;
 			packageProductDependencies = (
 				97B9913E284E812C001DDB3E /* Charts */,
+				97AE7367284F530F00A12476 /* Kingfisher */,
 			);
 			productName = StocksApp;
 			productReference = 97030A24283CC821004D9D88 /* StocksApp.app */;
@@ -384,6 +390,7 @@
 			mainGroup = 97030A1B283CC821004D9D88;
 			packageReferences = (
 				97B9913D284E812C001DDB3E /* XCRemoteSwiftPackageReference "Charts" */,
+				97AE7366284F530F00A12476 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 97030A25283CC821004D9D88 /* Products */;
 			projectDirPath = "";
@@ -412,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97030A2C283CC821004D9D88 /* StocksViewController.swift in Sources */,
+				97AE736A284F539D00A12476 /* UIImageViewExtension.swift in Sources */,
 				978D7A0F28473C7500DC7D7A /* FavoritesStocksView.swift in Sources */,
 				97BAC7FC28421155002BF05E /* NSObjectExtension.swift in Sources */,
 				97BAC7F628420B00002BF05E /* StocksPresenter.swift in Sources */,
@@ -654,6 +662,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		97AE7366284F530F00A12476 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		97B9913D284E812C001DDB3E /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
@@ -665,6 +681,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		97AE7367284F530F00A12476 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97AE7366284F530F00A12476 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		97B9913E284E812C001DDB3E /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 97B9913D284E812C001DDB3E /* XCRemoteSwiftPackageReference "Charts" */;
