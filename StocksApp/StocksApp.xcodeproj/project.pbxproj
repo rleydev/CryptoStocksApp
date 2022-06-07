@@ -25,14 +25,10 @@
 		97672FBF283FCBBB00478FBD /* StocksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97672FBE283FCBBB00478FBD /* StocksService.swift */; };
 		97672FE3283FFDE400478FBD /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97672FE2283FFDE400478FBD /* StockViewController.swift */; };
 		978D7A0F28473C7500DC7D7A /* FavoritesStocksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D7A0E28473C7500DC7D7A /* FavoritesStocksView.swift */; };
-		978D7A1128473FDD00DC7D7A /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D7A1028473FDD00DC7D7A /* FavoritePresenter.swift */; };
-		97960BCE2850AD1A001C0B50 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97960BBC2850AD19001C0B50 /* Montserrat-SemiBold.ttf */; };
-		97960BD12850AD1A001C0B50 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97960BBF2850AD1A001C0B50 /* Montserrat-Bold.ttf */; };
-		97960BD42850B2D1001C0B50 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97960BD32850B2D1001C0B50 /* ArrayExtension.swift */; };
-		97960BD62850B97C001C0B50 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97960BD52850B97C001C0B50 /* NotificationExtension.swift */; };
+		978D7A1128473FDD00DC7D7A /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D7A1028473FDD00DC7D7A /* FavoritesPresenter.swift */; };
 		97B1BD20284CA04C00BDB5A0 /* GraphContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B1BD1F284CA04C00BDB5A0 /* GraphContainerView.swift */; };
-		97B1BD23284CADCD00BDB5A0 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 97B1BD22284CADCD00BDB5A0 /* Charts */; };
 		97B1BD26284CC1F700BDB5A0 /* GraphModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B1BD25284CC1F700BDB5A0 /* GraphModel.swift */; };
+		97B9913F284E812C001DDB3E /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 97B9913E284E812C001DDB3E /* Charts */; };
 		97BAC7F628420B00002BF05E /* StocksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC7F528420B00002BF05E /* StocksPresenter.swift */; };
 		97BAC7FC28421155002BF05E /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC7FB28421155002BF05E /* NSObjectExtension.swift */; };
 		97BAC7FE284211CE002BF05E /* StocksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC7FD284211CE002BF05E /* StocksRouter.swift */; };
@@ -63,11 +59,7 @@
 		97672FBE283FCBBB00478FBD /* StocksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksService.swift; sourceTree = "<group>"; };
 		97672FE2283FFDE400478FBD /* StockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
 		978D7A0E28473C7500DC7D7A /* FavoritesStocksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStocksView.swift; sourceTree = "<group>"; };
-		978D7A1028473FDD00DC7D7A /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
-		97960BBC2850AD19001C0B50 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
-		97960BBF2850AD1A001C0B50 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
-		97960BD32850B2D1001C0B50 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
-		97960BD52850B97C001C0B50 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
+		978D7A1028473FDD00DC7D7A /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
 		97B1BD1F284CA04C00BDB5A0 /* GraphContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphContainerView.swift; sourceTree = "<group>"; };
 		97B1BD25284CC1F700BDB5A0 /* GraphModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphModel.swift; sourceTree = "<group>"; };
 		97BAC7F528420B00002BF05E /* StocksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksPresenter.swift; sourceTree = "<group>"; };
@@ -84,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97B1BD23284CADCD00BDB5A0 /* Charts in Frameworks */,
+				97B9913F284E812C001DDB3E /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +86,6 @@
 		97030A1B283CC821004D9D88 = {
 			isa = PBXGroup;
 			children = (
-				97960BAD2850ACC6001C0B50 /* Fonts */,
 				97030A26283CC821004D9D88 /* StocksApp */,
 				97030A25283CC821004D9D88 /* Products */,
 			);
@@ -119,7 +110,7 @@
 			path = StocksApp;
 			sourceTree = "<group>";
 		};
-		9764BFB6284637FF00D0CA67 /* GraphStockScreen */ = {
+		9764BFB6284637FF00D0CA67 /* DetailedStockScreen */ = {
 			isa = PBXGroup;
 			children = (
 				97EA1E9B28493F17006D1592 /* Services */,
@@ -127,7 +118,7 @@
 				9764BFB92846383900D0CA67 /* View */,
 				9764BFB82846382200D0CA67 /* Presenter */,
 			);
-			path = GraphStockScreen;
+			path = DetailedStockScreen;
 			sourceTree = "<group>";
 		};
 		9764BFB82846382200D0CA67 /* Presenter */ = {
@@ -142,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				97672FE2283FFDE400478FBD /* StockViewController.swift */,
-				97B1BD27284D2D7A00BDB5A0 /* GraphView */,
+				97B1BD27284D2D7A00BDB5A0 /* GraphContainer */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,7 +169,7 @@
 		9764BFC82846B47E00D0CA67 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				978D7A1028473FDD00DC7D7A /* FavoritePresenter.swift */,
+				978D7A1028473FDD00DC7D7A /* FavoritesPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -188,7 +179,7 @@
 			children = (
 				97672FAF283FC8C900478FBD /* Service */,
 				978D7A15284758F100DC7D7A /* StocksListsViews */,
-				9764BFB6284637FF00D0CA67 /* GraphStockScreen */,
+				9764BFB6284637FF00D0CA67 /* DetailedStockScreen */,
 			);
 			path = CryptoStocksScreen;
 			sourceTree = "<group>";
@@ -266,23 +257,6 @@
 			path = StocksListsViews;
 			sourceTree = "<group>";
 		};
-		97960BAD2850ACC6001C0B50 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				97960BAE2850AD00001C0B50 /* Montserrat */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
-		97960BAE2850AD00001C0B50 /* Montserrat */ = {
-			isa = PBXGroup;
-			children = (
-				97960BBF2850AD1A001C0B50 /* Montserrat-Bold.ttf */,
-				97960BBC2850AD19001C0B50 /* Montserrat-SemiBold.ttf */,
-			);
-			path = Montserrat;
-			sourceTree = "<group>";
-		};
 		97B1BD24284CC1E200BDB5A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,12 +265,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		97B1BD27284D2D7A00BDB5A0 /* GraphView */ = {
+		97B1BD27284D2D7A00BDB5A0 /* GraphContainer */ = {
 			isa = PBXGroup;
 			children = (
 				97B1BD1F284CA04C00BDB5A0 /* GraphContainerView.swift */,
 			);
-			path = GraphView;
+			path = GraphContainer;
 			sourceTree = "<group>";
 		};
 		97BAC7F328420AA1002BF05E /* Presenter */ = {
@@ -349,8 +323,6 @@
 			children = (
 				97BAC7FB28421155002BF05E /* NSObjectExtension.swift */,
 				97030A3D283D2B07004D9D88 /* UIColorExtension.swift */,
-				97960BD32850B2D1001C0B50 /* ArrayExtension.swift */,
-				97960BD52850B97C001C0B50 /* NotificationExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -380,7 +352,7 @@
 			);
 			name = StocksApp;
 			packageProductDependencies = (
-				97B1BD22284CADCD00BDB5A0 /* Charts */,
+				97B9913E284E812C001DDB3E /* Charts */,
 			);
 			productName = StocksApp;
 			productReference = 97030A24283CC821004D9D88 /* StocksApp.app */;
@@ -411,7 +383,7 @@
 			);
 			mainGroup = 97030A1B283CC821004D9D88;
 			packageReferences = (
-				97B1BD21284CADCC00BDB5A0 /* XCRemoteSwiftPackageReference "Charts" */,
+				97B9913D284E812C001DDB3E /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 97030A25283CC821004D9D88 /* Products */;
 			projectDirPath = "";
@@ -427,9 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97960BD12850AD1A001C0B50 /* Montserrat-Bold.ttf in Resources */,
 				97030A34283CC822004D9D88 /* LaunchScreen.storyboard in Resources */,
-				97960BCE2850AD1A001C0B50 /* Montserrat-SemiBold.ttf in Resources */,
 				97030A31283CC822004D9D88 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,13 +432,11 @@
 				71D0B1F6284291A40020A708 /* StockPresenter.swift in Sources */,
 				9764BFC328467BCB00D0CA67 /* FileManager.swift in Sources */,
 				97672FBA283FC99100478FBD /* HTTPMethod.swift in Sources */,
-				97960BD42850B2D1001C0B50 /* ArrayExtension.swift in Sources */,
 				97030A28283CC821004D9D88 /* AppDelegate.swift in Sources */,
 				97672FB6283FC95100478FBD /* NetworkService.swift in Sources */,
 				97030A3C283CEA4D004D9D88 /* StockCell.swift in Sources */,
 				97B1BD26284CC1F700BDB5A0 /* GraphModel.swift in Sources */,
-				97960BD62850B97C001C0B50 /* NotificationExtension.swift in Sources */,
-				978D7A1128473FDD00DC7D7A /* FavoritePresenter.swift in Sources */,
+				978D7A1128473FDD00DC7D7A /* FavoritesPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,7 +505,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -592,7 +560,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -612,12 +580,13 @@
 				DEVELOPMENT_TEAM = A3U43FT35S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StocksApp/Application/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CryptoStocksApp;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -641,12 +610,13 @@
 				DEVELOPMENT_TEAM = A3U43FT35S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StocksApp/Application/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CryptoStocksApp;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -684,7 +654,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		97B1BD21284CADCC00BDB5A0 /* XCRemoteSwiftPackageReference "Charts" */ = {
+		97B9913D284E812C001DDB3E /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
 			requirement = {
@@ -695,9 +665,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		97B1BD22284CADCD00BDB5A0 /* Charts */ = {
+		97B9913E284E812C001DDB3E /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 97B1BD21284CADCC00BDB5A0 /* XCRemoteSwiftPackageReference "Charts" */;
+			package = 97B9913D284E812C001DDB3E /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
 		};
 /* End XCSwiftPackageProductDependency section */

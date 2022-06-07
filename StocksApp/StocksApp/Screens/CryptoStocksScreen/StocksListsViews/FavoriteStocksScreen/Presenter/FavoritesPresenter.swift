@@ -1,5 +1,5 @@
 //
-//  FavoritePresenter.swift
+//  FavoritesPresenter.swift
 //  StocksApp
 //
 //  Created by Arthur Lee on 01.06.2022.
@@ -24,6 +24,7 @@ protocol FavoriteStocksPresenterProtocol {
 
 final class FavoriteStocksPresenter: FavoriteStocksPresenterProtocol {
     
+
     private let service: StocksServiceProtocol
     
     var stocks: [StocksModelProtocol] = []
@@ -48,7 +49,9 @@ final class FavoriteStocksPresenter: FavoriteStocksPresenterProtocol {
             switch result {
             case .success(let stocks):
                 let allStocks = stocks
-                self?.stocks = allStocks.filter { $0.isFavorite }
+                self?.stocks = allStocks.filter({ stock in
+                    stock.isFavorite == true
+                })
                 self?.view?.updateView()
             case .failure(let error):
                 self?.view?.updateView(withError: error.localizedDescription)
@@ -61,3 +64,6 @@ final class FavoriteStocksPresenter: FavoriteStocksPresenterProtocol {
     }
     
 }
+
+
+

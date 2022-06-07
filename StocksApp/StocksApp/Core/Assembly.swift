@@ -60,5 +60,4 @@ final class Assembly {
         presenter.view = view
         return view
     }
-   
 }

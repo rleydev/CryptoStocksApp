@@ -1,5 +1,5 @@
 //
-//  FavotirtesServiceProtocol.swift
+//  FavoritesServiceProtocol.swift
 //  StocksApp
 //
 //  Created by Arthur Lee on 31.05.2022.

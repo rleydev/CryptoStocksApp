@@ -33,7 +33,7 @@ final class StocksViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpTableViewView()
+        setUpTableView()
         setUpSubViews()
     }
     
@@ -42,7 +42,7 @@ final class StocksViewController: UIViewController {
         presenter.loadView()
     }
     
-    private func setUpTableViewView() {
+    private func setUpTableView() {
         view.backgroundColor = .white
         tableView.dataSource = self
         tableView.delegate = self
@@ -51,7 +51,6 @@ final class StocksViewController: UIViewController {
     }
 
     private func setUpSubViews() {
-        
         view.addSubview(tableView)
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
