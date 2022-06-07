@@ -35,7 +35,10 @@ final class Assembly {
     }
     
     func thirdVC() -> UIViewController {
-        UIViewController()
+        let presenter = SearchStocksPresenter(service: stockService)
+        let view = SearchStocksViewController(presenter: presenter)
+        presenter.view = view 
+        return view
     }
     
     func tabBarController() -> UIViewController {

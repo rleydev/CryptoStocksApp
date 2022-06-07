@@ -28,6 +28,8 @@
 		978D7A1128473FDD00DC7D7A /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D7A1028473FDD00DC7D7A /* FavoritesPresenter.swift */; };
 		97AE7368284F530F00A12476 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 97AE7367284F530F00A12476 /* Kingfisher */; };
 		97AE736A284F539D00A12476 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE7369284F539D00A12476 /* UIImageViewExtension.swift */; };
+		97AE7370284F584500A12476 /* SearchStocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE736F284F584500A12476 /* SearchStocksViewController.swift */; };
+		97AE7372284F7EBE00A12476 /* SearchStocksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE7371284F7EBE00A12476 /* SearchStocksPresenter.swift */; };
 		97B1BD20284CA04C00BDB5A0 /* GraphContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B1BD1F284CA04C00BDB5A0 /* GraphContainerView.swift */; };
 		97B1BD26284CC1F700BDB5A0 /* GraphModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B1BD25284CC1F700BDB5A0 /* GraphModel.swift */; };
 		97B9913F284E812C001DDB3E /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 97B9913E284E812C001DDB3E /* Charts */; };
@@ -63,6 +65,8 @@
 		978D7A0E28473C7500DC7D7A /* FavoritesStocksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStocksView.swift; sourceTree = "<group>"; };
 		978D7A1028473FDD00DC7D7A /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
 		97AE7369284F539D00A12476 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		97AE736F284F584500A12476 /* SearchStocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStocksViewController.swift; sourceTree = "<group>"; };
+		97AE7371284F7EBE00A12476 /* SearchStocksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStocksPresenter.swift; sourceTree = "<group>"; };
 		97B1BD1F284CA04C00BDB5A0 /* GraphContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphContainerView.swift; sourceTree = "<group>"; };
 		97B1BD25284CC1F700BDB5A0 /* GraphModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphModel.swift; sourceTree = "<group>"; };
 		97BAC7F528420B00002BF05E /* StocksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksPresenter.swift; sourceTree = "<group>"; };
@@ -255,10 +259,36 @@
 			children = (
 				97672FB0283FC8E900478FBD /* Model */,
 				97672FAB283FC86100478FBD /* Cell */,
+				97AE736C284F56D400A12476 /* SearchStocksScreen */,
 				9764BFC62846B42800D0CA67 /* FavoriteStocksScreen */,
 				97BAC7F428420AC7002BF05E /* AllStocksScreen */,
 			);
 			path = StocksListsViews;
+			sourceTree = "<group>";
+		};
+		97AE736C284F56D400A12476 /* SearchStocksScreen */ = {
+			isa = PBXGroup;
+			children = (
+				97AE736E284F56E900A12476 /* Presenter */,
+				97AE736D284F56E200A12476 /* View */,
+			);
+			path = SearchStocksScreen;
+			sourceTree = "<group>";
+		};
+		97AE736D284F56E200A12476 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				97AE736F284F584500A12476 /* SearchStocksViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		97AE736E284F56E900A12476 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				97AE7371284F7EBE00A12476 /* SearchStocksPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		97B1BD24284CC1E200BDB5A0 /* Model */ = {
@@ -428,6 +458,7 @@
 				9764BFC528467BE800D0CA67 /* FavoritesServiceProtocol.swift in Sources */,
 				97EA1E9A28493608006D1592 /* FavoritesUpdateService.swift in Sources */,
 				97672FB8283FC96E00478FBD /* NetworkError.swift in Sources */,
+				97AE7370284F584500A12476 /* SearchStocksViewController.swift in Sources */,
 				97BAC7FE284211CE002BF05E /* StocksRouter.swift in Sources */,
 				97672FBF283FCBBB00478FBD /* StocksService.swift in Sources */,
 				97672FBC283FCA2E00478FBD /* StockModel.swift in Sources */,
@@ -439,6 +470,7 @@
 				97B1BD20284CA04C00BDB5A0 /* GraphContainerView.swift in Sources */,
 				71D0B1F6284291A40020A708 /* StockPresenter.swift in Sources */,
 				9764BFC328467BCB00D0CA67 /* FileManager.swift in Sources */,
+				97AE7372284F7EBE00A12476 /* SearchStocksPresenter.swift in Sources */,
 				97672FBA283FC99100478FBD /* HTTPMethod.swift in Sources */,
 				97030A28283CC821004D9D88 /* AppDelegate.swift in Sources */,
 				97672FB6283FC95100478FBD /* NetworkService.swift in Sources */,
