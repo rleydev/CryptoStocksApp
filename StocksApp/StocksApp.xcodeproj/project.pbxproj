@@ -40,6 +40,10 @@
 		97BAC80228421AE3002BF05E /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC80128421AE3002BF05E /* Assembly.swift */; };
 		97EA1E9A28493608006D1592 /* FavoritesUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EA1E9928493608006D1592 /* FavoritesUpdateService.swift */; };
 		97EA1E9D28493F24006D1592 /* GraphResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EA1E9C28493F24006D1592 /* GraphResponse.swift */; };
+		97F6F388285118AF006806AD /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F6F387285118AF006806AD /* ArrayExtension.swift */; };
+		97F6F38A285118CF006806AD /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F6F389285118CF006806AD /* NotificationExtension.swift */; };
+		97F6F39428511A72006806AD /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97F6F38E28511A72006806AD /* Montserrat-Bold.ttf */; };
+		97F6F39528511A72006806AD /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97F6F38F28511A72006806AD /* Montserrat-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +80,10 @@
 		97BAC80128421AE3002BF05E /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		97EA1E9928493608006D1592 /* FavoritesUpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesUpdateService.swift; sourceTree = "<group>"; };
 		97EA1E9C28493F24006D1592 /* GraphResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphResponse.swift; sourceTree = "<group>"; };
+		97F6F387285118AF006806AD /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		97F6F389285118CF006806AD /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
+		97F6F38E28511A72006806AD /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		97F6F38F28511A72006806AD /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,7 @@
 		97030A1B283CC821004D9D88 = {
 			isa = PBXGroup;
 			children = (
+				97F6F38B28511A72006806AD /* Fonts */,
 				97030A26283CC821004D9D88 /* StocksApp */,
 				97030A25283CC821004D9D88 /* Products */,
 			);
@@ -356,7 +365,9 @@
 			isa = PBXGroup;
 			children = (
 				97BAC7FB28421155002BF05E /* NSObjectExtension.swift */,
+				97F6F387285118AF006806AD /* ArrayExtension.swift */,
 				97030A3D283D2B07004D9D88 /* UIColorExtension.swift */,
+				97F6F389285118CF006806AD /* NotificationExtension.swift */,
 				97AE7369284F539D00A12476 /* UIImageViewExtension.swift */,
 			);
 			path = Extensions;
@@ -368,6 +379,23 @@
 				97EA1E9C28493F24006D1592 /* GraphResponse.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		97F6F38B28511A72006806AD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				97F6F38C28511A72006806AD /* Montserrat */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		97F6F38C28511A72006806AD /* Montserrat */ = {
+			isa = PBXGroup;
+			children = (
+				97F6F38E28511A72006806AD /* Montserrat-Bold.ttf */,
+				97F6F38F28511A72006806AD /* Montserrat-SemiBold.ttf */,
+			);
+			path = Montserrat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,8 +464,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97F6F39428511A72006806AD /* Montserrat-Bold.ttf in Resources */,
 				97030A34283CC822004D9D88 /* LaunchScreen.storyboard in Resources */,
 				97030A31283CC822004D9D88 /* Assets.xcassets in Resources */,
+				97F6F39528511A72006806AD /* Montserrat-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +493,8 @@
 				97672FBF283FCBBB00478FBD /* StocksService.swift in Sources */,
 				97672FBC283FCA2E00478FBD /* StockModel.swift in Sources */,
 				97030A3E283D2B07004D9D88 /* UIColorExtension.swift in Sources */,
+				97F6F388285118AF006806AD /* ArrayExtension.swift in Sources */,
+				97F6F38A285118CF006806AD /* NotificationExtension.swift in Sources */,
 				97672FB4283FC93400478FBD /* Router.swift in Sources */,
 				97BAC80228421AE3002BF05E /* Assembly.swift in Sources */,
 				97672FE3283FFDE400478FBD /* StockViewController.swift in Sources */,

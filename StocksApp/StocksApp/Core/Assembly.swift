@@ -37,7 +37,7 @@ final class Assembly {
     func thirdVC() -> UIViewController {
         let presenter = SearchStocksPresenter(service: stockService)
         let view = SearchStocksViewController(presenter: presenter)
-        presenter.view = view 
+        presenter.view = view
         return view
     }
     
@@ -63,4 +63,5 @@ final class Assembly {
         presenter.view = view
         return view
     }
+   
 }

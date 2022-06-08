@@ -33,7 +33,7 @@ final class StocksViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpTableView()
+        setUpTableViewView()
         setUpSubViews()
     }
     
@@ -42,7 +42,7 @@ final class StocksViewController: UIViewController {
         presenter.loadView()
     }
     
-    private func setUpTableView() {
+    private func setUpTableViewView() {
         view.backgroundColor = .white
         tableView.dataSource = self
         tableView.delegate = self
@@ -51,6 +51,7 @@ final class StocksViewController: UIViewController {
     }
 
     private func setUpSubViews() {
+        
         view.addSubview(tableView)
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
@@ -105,4 +106,3 @@ extension StocksViewController: StocksViewProtocol {
         print("Error -", message)
     }
 }
-

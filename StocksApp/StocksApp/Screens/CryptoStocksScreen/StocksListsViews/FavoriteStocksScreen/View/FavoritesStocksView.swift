@@ -41,6 +41,7 @@ final class FavoritesStocksViewController: UIViewController {
         super.viewWillAppear(animated)
         presenter.loadView()
     }
+    
 
     private func setUpTableView() {
         view.backgroundColor = .white
