@@ -12,3 +12,10 @@ extension UIColor {
         self.init(red: r / 255, green: g / 255, blue: b / 255, alpha: 1)
     }
 }
+
+extension UIColor {
+    enum CustomColors {
+        static var changedPriceTextColor = UIColor(r: 36, g: 178, b: 93)
+        static var customLightGray = UIColor(r: 240, g: 244, b: 247)
+    }
+}

@@ -27,14 +27,12 @@ final class StockModel: StocksModelProtocol {
     private let stock: Stock
     private var favoriteService: FavoriteServiceProtocol
     
-    
     init(stock: Stock) {
         self.stock = stock
         favoriteService = Assembly.shared.favouriteService
         isFavorite = favoriteService.isFavorite(for: id)
     }
 
-    
     var id: String {
         stock.id
         
@@ -61,14 +59,13 @@ final class StockModel: StocksModelProtocol {
     }
     
     var changeColor: UIColor {
-        stock.change >= 0 ? UIColor(r: 36, g: 178, b: 93) : .red
+        stock.change >= 0 ? UIColor.CustomColors.changedPriceTextColor : .red
     }
     
     var priceForBuyButton: String {
         "Buy for $\(String(format: "%.2f", stock.price + 1.32))"
     }
 
-    
     lazy var isFavorite: Bool = false
     
     func setFavourite() {
@@ -81,10 +78,4 @@ final class StockModel: StocksModelProtocol {
             favoriteService.remove(id: id)
         }
     }
-        
-    
 }
-
-
-
-

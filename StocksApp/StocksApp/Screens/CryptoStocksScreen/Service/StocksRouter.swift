@@ -27,12 +27,10 @@ enum StocksRouter: Router {
     
     var method: HTTPMethod {
         switch self {
-        case .stocks:
-            return .get
-        case .stock:
+        case .stocks, .stock:
             return .get
         }
-    
+        
     }
     
     var parameters: Parameters {

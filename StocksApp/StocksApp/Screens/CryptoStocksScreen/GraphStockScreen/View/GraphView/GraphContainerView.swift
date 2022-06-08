@@ -15,7 +15,6 @@ final class GraphContainerView: UIView {
     private lazy var weeklyGraphView: LineChartView = {
         
         let view = LineChartView()
-        
         view.translatesAutoresizingMaskIntoConstraints = false
         view.xAxis.drawLabelsEnabled = false
         view.leftAxis.enabled = false
@@ -31,7 +30,6 @@ final class GraphContainerView: UIView {
     private lazy var monthlyGraphView: LineChartView = {
         
         let view = LineChartView()
-        
         view.translatesAutoresizingMaskIntoConstraints = false
         view.xAxis.drawLabelsEnabled = false
         view.leftAxis.enabled = false
@@ -47,7 +45,6 @@ final class GraphContainerView: UIView {
     private lazy var halfYearGraphView: LineChartView = {
         
         let view = LineChartView()
-        
         view.translatesAutoresizingMaskIntoConstraints = false
         view.xAxis.drawLabelsEnabled = false
         view.leftAxis.enabled = false
@@ -63,7 +60,6 @@ final class GraphContainerView: UIView {
     private lazy var oneYearGraphView: LineChartView = {
         
         let view = LineChartView()
-        
         view.translatesAutoresizingMaskIntoConstraints = false
         view.xAxis.drawLabelsEnabled = false
         view.leftAxis.enabled = false
@@ -80,7 +76,6 @@ final class GraphContainerView: UIView {
     private var buttonStackView: UIStackView = {
         
         let stackView = UIStackView()
-        
         stackView.axis = .horizontal
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
@@ -101,7 +96,6 @@ final class GraphContainerView: UIView {
         setUpSubViews()
     }
     
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -120,7 +114,6 @@ final class GraphContainerView: UIView {
         setCharts(with: model.periods.last?.prices, chartView: oneYearGraphView)
     }
     
-    
     private func setUpSubViews() {
         oneYearGraphView.addSubview(loader)
         addSubview(weeklyGraphView)
@@ -134,40 +127,37 @@ final class GraphContainerView: UIView {
     
     private func setUpConstraints() {
         
-        // graphic for week
-        weeklyGraphView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        weeklyGraphView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        weeklyGraphView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        weeklyGraphView.heightAnchor.constraint(equalTo: weeklyGraphView.widthAnchor, multiplier: 26/36).isActive = true
-        
-        // graphic for month
-        monthlyGraphView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        monthlyGraphView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        monthlyGraphView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        monthlyGraphView.heightAnchor.constraint(equalTo: monthlyGraphView.widthAnchor, multiplier: 26/36).isActive = true
-        
-        // graphic for 6 month
-        halfYearGraphView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        halfYearGraphView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        halfYearGraphView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        halfYearGraphView.heightAnchor.constraint(equalTo: halfYearGraphView.widthAnchor, multiplier: 26/36).isActive = true
-        
-        // graphic for one year
-        oneYearGraphView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        oneYearGraphView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        oneYearGraphView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        oneYearGraphView.heightAnchor.constraint(equalTo: halfYearGraphView.widthAnchor, multiplier: 26/36).isActive = true
-        
-        // button stackview
-        buttonStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
-        buttonStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
-        buttonStackView.topAnchor.constraint(equalTo: oneYearGraphView.bottomAnchor, constant: 40).isActive = true
-        buttonStackView.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        buttonStackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        
-        //loader
-        loader.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        loader.centerYAnchor.constraint(equalTo: oneYearGraphView.centerYAnchor, constant: -20).isActive = true
+        NSLayoutConstraint.activate( [
+            // graphic for week
+            weeklyGraphView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            weeklyGraphView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            weeklyGraphView.topAnchor.constraint(equalTo: topAnchor),
+            weeklyGraphView.heightAnchor.constraint(equalTo: weeklyGraphView.widthAnchor, multiplier: 26/36),
+            // monthlyGraph
+            monthlyGraphView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            monthlyGraphView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            monthlyGraphView.topAnchor.constraint(equalTo: topAnchor),
+            monthlyGraphView.heightAnchor.constraint(equalTo: monthlyGraphView.widthAnchor, multiplier: 26/36),
+            // graphic for 6 month
+            halfYearGraphView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            halfYearGraphView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            halfYearGraphView.topAnchor.constraint(equalTo: topAnchor),
+            halfYearGraphView.heightAnchor.constraint(equalTo: halfYearGraphView.widthAnchor, multiplier: 26/36),
+            // graphic for one year
+            oneYearGraphView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            oneYearGraphView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            oneYearGraphView.topAnchor.constraint(equalTo: topAnchor),
+            oneYearGraphView.heightAnchor.constraint(equalTo: halfYearGraphView.widthAnchor, multiplier: 26/36),
+            // button stackview
+            buttonStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            buttonStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            buttonStackView.topAnchor.constraint(equalTo: oneYearGraphView.bottomAnchor, constant: 40),
+            buttonStackView.heightAnchor.constraint(equalToConstant: 44),
+            buttonStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            //loader
+            loader.centerXAnchor.constraint(equalTo: centerXAnchor),
+            loader.centerYAnchor.constraint(equalTo: oneYearGraphView.centerYAnchor, constant: -20)
+        ])
     }
     
     private func addButtonsToStackView(for titles: [String]) {
@@ -176,7 +166,7 @@ final class GraphContainerView: UIView {
             let button = UIButton()
             
             button.tag = index
-            button.backgroundColor = UIColor(r: 240, g: 244, b: 247)
+            button.backgroundColor = UIColor.CustomColors.customLightGray
             button.setTitle(title, for: .normal)
             button.setTitleColor(.black, for: .normal)
             button.titleLabel?.font = .boldSystemFont(ofSize: 12)
@@ -186,11 +176,11 @@ final class GraphContainerView: UIView {
             
             switch button.tag {
             case 0:
-                button.backgroundColor = UIColor(r: 240, g: 244, b: 247)
+                button.backgroundColor = UIColor.CustomColors.customLightGray
             case 1:
-                button.backgroundColor = UIColor(r: 240, g: 244, b: 247)
+                button.backgroundColor = UIColor.CustomColors.customLightGray
             case 2:
-                button.backgroundColor = UIColor(r: 240, g: 244, b: 247)
+                button.backgroundColor = UIColor.CustomColors.customLightGray
             case 3:
                 button.backgroundColor = .black
                 button.setTitleColor(.white, for: .normal)
@@ -208,7 +198,7 @@ final class GraphContainerView: UIView {
         buttonStackView.subviews.compactMap {
             $0 as? UIButton
         }.forEach { button in
-            button.backgroundColor = UIColor(r: 240, g: 244, b: 247)
+            button.backgroundColor = UIColor.CustomColors.customLightGray
             button.setTitleColor(.black, for: .normal)
         }
         

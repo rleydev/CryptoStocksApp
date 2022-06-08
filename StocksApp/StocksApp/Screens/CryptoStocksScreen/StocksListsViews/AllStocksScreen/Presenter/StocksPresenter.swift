@@ -39,8 +39,7 @@ final class StocksPresenter: StocksPresenterProtocol {
     }
     
     weak var view: StocksViewProtocol?
-    
-    
+
     func loadView() {
         startObservingNotifications()
         
@@ -59,12 +58,10 @@ final class StocksPresenter: StocksPresenterProtocol {
             }
         }
     }
-        
     
     func model(for indexPath: IndexPath) -> StocksModelProtocol {
         stocks[indexPath.row]
     }
-    
 }
 
 extension StocksPresenter: FavoritesUpdateServiceProtocol {
@@ -73,9 +70,6 @@ extension StocksPresenter: FavoritesUpdateServiceProtocol {
         guard let id = notification.stockID else { return }
         guard let index = stocks.firstIndex(where: { $0.id == id }) else { return }
         let indexPath = IndexPath(row: index, section: 0)
-    
-
         view?.updateCell(for: indexPath)
     }
-
 }

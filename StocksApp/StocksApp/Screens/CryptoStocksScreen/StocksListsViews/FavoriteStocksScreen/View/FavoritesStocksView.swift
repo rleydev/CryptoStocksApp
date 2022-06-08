@@ -1,5 +1,5 @@
 //
-//  FavoritesStocksView.swift
+//  FavoritesStocksViewController.swift
 //  StocksApp
 //
 //  Created by Arthur Lee on 01.06.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class FavoritesStocksView: UIViewController {
+final class FavoritesStocksViewController: UIViewController {
     
     private var presenter: FavoriteStocksPresenterProtocol
     
@@ -16,7 +16,6 @@ final class FavoritesStocksView: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
     }
-    
     
     private lazy var tableView: UITableView = {
         
@@ -31,8 +30,6 @@ final class FavoritesStocksView: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    private let colorForOneCell = UIColor(r: 240, g: 244, b: 247)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +63,7 @@ final class FavoritesStocksView: UIViewController {
 
 }
 
-extension FavoritesStocksView: UITableViewDataSource {
+extension FavoritesStocksViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         presenter.itemCount
@@ -76,7 +73,7 @@ extension FavoritesStocksView: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: StockCell.typeName, for: indexPath) as? StockCell else { return UITableViewCell() }
         cell.selectionStyle = .none
         if indexPath.row.isMultiple(of: 2) {
-            cell.cellView.backgroundColor = colorForOneCell
+            cell.cellView.backgroundColor = UIColor.CustomColors.customLightGray
         } else {
             cell.cellView.backgroundColor = .white
         }
@@ -87,7 +84,7 @@ extension FavoritesStocksView: UITableViewDataSource {
     
 }
 
-extension FavoritesStocksView: UITableViewDelegate {
+extension FavoritesStocksViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = presenter.model(for: indexPath)
         let detailedVC = Assembly.shared.detailedVC(for: model)
@@ -96,7 +93,7 @@ extension FavoritesStocksView: UITableViewDelegate {
     }
 }
 
-extension FavoritesStocksView: FavoriteStocksViewProtocol {
+extension FavoritesStocksViewController: FavoriteStocksViewProtocol {
     
     func updateView() {
         tableView.reloadData()
@@ -110,4 +107,3 @@ extension FavoritesStocksView: FavoriteStocksViewProtocol {
     }
     
 }
-

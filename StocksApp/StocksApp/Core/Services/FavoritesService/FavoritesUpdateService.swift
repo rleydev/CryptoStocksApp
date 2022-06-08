@@ -21,4 +21,3 @@ extension FavoritesUpdateServiceProtocol {
 extension NSNotification.Name {
     static let favoriteNotification = NSNotification.Name("set_favorite")
 }
-

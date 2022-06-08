@@ -21,7 +21,6 @@ final class StocksViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     private lazy var tableView: UITableView = {
         
         let tableView = UITableView()
@@ -31,8 +30,6 @@ final class StocksViewController: UIViewController {
         
         return tableView
     }()
-
-    private let colorForOneCell = UIColor(r: 240, g: 244, b: 247)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +47,7 @@ final class StocksViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.topItem?.title = "Crypto Stocks"
+        navigationController?.navigationBar.topItem?.title = "Crypto"
     }
 
     private func setUpSubViews() {
@@ -72,7 +69,7 @@ extension StocksViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: StockCell.typeName, for: indexPath) as? StockCell else { return UITableViewCell() }
         cell.selectionStyle = .none
         if indexPath.row.isMultiple(of: 2) {
-            cell.cellView.backgroundColor = colorForOneCell
+            cell.cellView.backgroundColor = UIColor.CustomColors.customLightGray
         } else {
             cell.cellView.backgroundColor = .white
         }
@@ -82,19 +79,11 @@ extension StocksViewController: UITableViewDataSource {
 }
 
 extension StocksViewController: UITableViewDelegate {
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             
-            let model = presenter.model(for: indexPath)
-    
-            let detailedVC = Assembly.shared.detailedVC(for: model)
-            navigationController?.pushViewController(detailedVC, animated: true)
-    }
-}
-
-extension Notification {
-    var stockID: String? {
-        guard let userInfo = userInfo, let id = userInfo["id"] as? String else { return nil }
-        return id
+        let model = presenter.model(for: indexPath)
+        let detailedVC = Assembly.shared.detailedVC(for: model)
+        navigationController?.pushViewController(detailedVC, animated: true)
     }
 }
 
@@ -116,6 +105,5 @@ extension StocksViewController: StocksViewProtocol {
     func updateView(withError message: String) {
         print("Error -", message)
     }
-    
 }
 

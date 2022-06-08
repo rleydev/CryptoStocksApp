@@ -26,6 +26,10 @@
 		97672FE3283FFDE400478FBD /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97672FE2283FFDE400478FBD /* StockViewController.swift */; };
 		978D7A0F28473C7500DC7D7A /* FavoritesStocksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D7A0E28473C7500DC7D7A /* FavoritesStocksView.swift */; };
 		978D7A1128473FDD00DC7D7A /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D7A1028473FDD00DC7D7A /* FavoritePresenter.swift */; };
+		97960BCE2850AD1A001C0B50 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97960BBC2850AD19001C0B50 /* Montserrat-SemiBold.ttf */; };
+		97960BD12850AD1A001C0B50 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97960BBF2850AD1A001C0B50 /* Montserrat-Bold.ttf */; };
+		97960BD42850B2D1001C0B50 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97960BD32850B2D1001C0B50 /* ArrayExtension.swift */; };
+		97960BD62850B97C001C0B50 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97960BD52850B97C001C0B50 /* NotificationExtension.swift */; };
 		97B1BD20284CA04C00BDB5A0 /* GraphContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B1BD1F284CA04C00BDB5A0 /* GraphContainerView.swift */; };
 		97B1BD23284CADCD00BDB5A0 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 97B1BD22284CADCD00BDB5A0 /* Charts */; };
 		97B1BD26284CC1F700BDB5A0 /* GraphModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B1BD25284CC1F700BDB5A0 /* GraphModel.swift */; };
@@ -35,7 +39,7 @@
 		97BAC8002842124C002BF05E /* StockResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC7FF2842124C002BF05E /* StockResponse.swift */; };
 		97BAC80228421AE3002BF05E /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC80128421AE3002BF05E /* Assembly.swift */; };
 		97EA1E9A28493608006D1592 /* FavoritesUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EA1E9928493608006D1592 /* FavoritesUpdateService.swift */; };
-		97EA1E9D28493F24006D1592 /* ChartsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EA1E9C28493F24006D1592 /* ChartsResponse.swift */; };
+		97EA1E9D28493F24006D1592 /* GraphResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EA1E9C28493F24006D1592 /* GraphResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +64,10 @@
 		97672FE2283FFDE400478FBD /* StockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
 		978D7A0E28473C7500DC7D7A /* FavoritesStocksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStocksView.swift; sourceTree = "<group>"; };
 		978D7A1028473FDD00DC7D7A /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
+		97960BBC2850AD19001C0B50 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		97960BBF2850AD1A001C0B50 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		97960BD32850B2D1001C0B50 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		97960BD52850B97C001C0B50 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		97B1BD1F284CA04C00BDB5A0 /* GraphContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphContainerView.swift; sourceTree = "<group>"; };
 		97B1BD25284CC1F700BDB5A0 /* GraphModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphModel.swift; sourceTree = "<group>"; };
 		97BAC7F528420B00002BF05E /* StocksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksPresenter.swift; sourceTree = "<group>"; };
@@ -68,7 +76,7 @@
 		97BAC7FF2842124C002BF05E /* StockResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockResponse.swift; sourceTree = "<group>"; };
 		97BAC80128421AE3002BF05E /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		97EA1E9928493608006D1592 /* FavoritesUpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesUpdateService.swift; sourceTree = "<group>"; };
-		97EA1E9C28493F24006D1592 /* ChartsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsResponse.swift; sourceTree = "<group>"; };
+		97EA1E9C28493F24006D1592 /* GraphResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +94,7 @@
 		97030A1B283CC821004D9D88 = {
 			isa = PBXGroup;
 			children = (
+				97960BAD2850ACC6001C0B50 /* Fonts */,
 				97030A26283CC821004D9D88 /* StocksApp */,
 				97030A25283CC821004D9D88 /* Products */,
 			);
@@ -257,6 +266,23 @@
 			path = StocksListsViews;
 			sourceTree = "<group>";
 		};
+		97960BAD2850ACC6001C0B50 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				97960BAE2850AD00001C0B50 /* Montserrat */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		97960BAE2850AD00001C0B50 /* Montserrat */ = {
+			isa = PBXGroup;
+			children = (
+				97960BBF2850AD1A001C0B50 /* Montserrat-Bold.ttf */,
+				97960BBC2850AD19001C0B50 /* Montserrat-SemiBold.ttf */,
+			);
+			path = Montserrat;
+			sourceTree = "<group>";
+		};
 		97B1BD24284CC1E200BDB5A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +349,8 @@
 			children = (
 				97BAC7FB28421155002BF05E /* NSObjectExtension.swift */,
 				97030A3D283D2B07004D9D88 /* UIColorExtension.swift */,
+				97960BD32850B2D1001C0B50 /* ArrayExtension.swift */,
+				97960BD52850B97C001C0B50 /* NotificationExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -330,7 +358,7 @@
 		97EA1E9B28493F17006D1592 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				97EA1E9C28493F24006D1592 /* ChartsResponse.swift */,
+				97EA1E9C28493F24006D1592 /* GraphResponse.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -399,7 +427,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97960BD12850AD1A001C0B50 /* Montserrat-Bold.ttf in Resources */,
 				97030A34283CC822004D9D88 /* LaunchScreen.storyboard in Resources */,
+				97960BCE2850AD1A001C0B50 /* Montserrat-SemiBold.ttf in Resources */,
 				97030A31283CC822004D9D88 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,7 +446,7 @@
 				97BAC7FC28421155002BF05E /* NSObjectExtension.swift in Sources */,
 				97BAC7F628420B00002BF05E /* StocksPresenter.swift in Sources */,
 				9764BFBB28465F3C00D0CA67 /* UserDefaults.swift in Sources */,
-				97EA1E9D28493F24006D1592 /* ChartsResponse.swift in Sources */,
+				97EA1E9D28493F24006D1592 /* GraphResponse.swift in Sources */,
 				9764BFC528467BE800D0CA67 /* FavoritesServiceProtocol.swift in Sources */,
 				97EA1E9A28493608006D1592 /* FavoritesUpdateService.swift in Sources */,
 				97672FB8283FC96E00478FBD /* NetworkError.swift in Sources */,
@@ -432,10 +462,12 @@
 				71D0B1F6284291A40020A708 /* StockPresenter.swift in Sources */,
 				9764BFC328467BCB00D0CA67 /* FileManager.swift in Sources */,
 				97672FBA283FC99100478FBD /* HTTPMethod.swift in Sources */,
+				97960BD42850B2D1001C0B50 /* ArrayExtension.swift in Sources */,
 				97030A28283CC821004D9D88 /* AppDelegate.swift in Sources */,
 				97672FB6283FC95100478FBD /* NetworkService.swift in Sources */,
 				97030A3C283CEA4D004D9D88 /* StockCell.swift in Sources */,
 				97B1BD26284CC1F700BDB5A0 /* GraphModel.swift in Sources */,
+				97960BD62850B97C001C0B50 /* NotificationExtension.swift in Sources */,
 				978D7A1128473FDD00DC7D7A /* FavoritePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,7 +13,6 @@ protocol StockViewProtocol: AnyObject {
     func updateView(withError message: String)
 }
 
-
 protocol StockPresentProtocol {
 
     var favoriteButtonIsSelected: Bool { get }
@@ -72,7 +71,6 @@ final class StockPresenter: StockPresentProtocol {
         model.priceForBuyButton
     }
     
-
     init(model: StocksModelProtocol, service: StocksServiceProtocol, graphModel: GraphModel) {
         self.model = model
         self.service = service
@@ -90,9 +88,6 @@ final class StockPresenter: StockPresentProtocol {
                 switch result {
                 case .success(let charts):
                     self?.view?.updateView(with: self?.graphModel.build(from: charts) ?? GraphModel(periods: []))
-                    print(charts.prices.map { $0.price })
-                    print(charts.prices.map { $0.date })
-                    print(charts.prices.count)
                 case.failure(let error):
                     self?.view?.updateView(withError: error.localizedDescription)
                 }

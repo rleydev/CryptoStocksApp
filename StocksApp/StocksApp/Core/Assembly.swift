@@ -28,7 +28,7 @@ final class Assembly {
     
     func secondVC() -> UIViewController {
         let presenter = FavoriteStocksPresenter(service: stockService)
-        let view = FavoritesStocksView(presenter: presenter)
+        let view = FavoritesStocksViewController(presenter: presenter)
         presenter.view = view
         return view
         

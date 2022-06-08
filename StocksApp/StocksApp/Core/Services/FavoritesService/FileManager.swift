@@ -51,5 +51,4 @@ final class FavoritesServiceFileManager: FavoriteServiceProtocol {
             print("FileManager writeError -", error.localizedDescription)
         }
     }
-    
 }

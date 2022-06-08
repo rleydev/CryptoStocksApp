@@ -5,7 +5,6 @@
 //  Created by Arthur Lee on 31.05.2022.
 //
 
-
 import UIKit
 
 final class FavoriteServiceUserDefaults: FavoriteServiceProtocol {
@@ -44,9 +43,4 @@ final class FavoriteServiceUserDefaults: FavoriteServiceProtocol {
         UserDefaults.standard.set(data, forKey: key)
         print("USerdef updated")
     }
-
 }
-
-
-
-

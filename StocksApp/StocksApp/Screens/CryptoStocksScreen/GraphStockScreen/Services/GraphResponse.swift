@@ -1,5 +1,5 @@
 //
-//  ChartsResponse.swift
+//  GraphResponse.swift
 //  StocksApp
 //
 //  Created by Arthur Lee on 03.06.2022.
@@ -8,8 +8,8 @@
 import Foundation
 
 struct Graph: Decodable {
-    let prices: [Price]
     
+    let prices: [Price]
     
     struct Price: Decodable {
         let date: Date
@@ -22,20 +22,8 @@ struct Graph: Decodable {
             guard let time = array[safe: 0], let price = array[safe: 1] else { throw NSError() }
             let date = Date(timeIntervalSince1970: TimeInterval(time/1000))
             
-            
             self.price = price
             self.date = date
-
         }
-    }
-}
-
-extension Array {
-    public subscript(safe index: Int) -> Element? {
-        guard index >= 0, index < endIndex else {
-            return nil
-        }
-        
-        return self[index]
     }
 }
