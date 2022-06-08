@@ -25,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appearance.shadowColor = .clear
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        
         return true
     }
 }

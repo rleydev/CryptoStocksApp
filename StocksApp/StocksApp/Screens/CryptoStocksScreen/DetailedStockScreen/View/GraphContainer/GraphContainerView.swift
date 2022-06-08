@@ -192,7 +192,6 @@ final class GraphContainerView: UIView {
         }
     }
     
-    
     @objc private func periodButtonTapped(sender: UIButton) {
         
         buttonStackView.subviews.compactMap {
@@ -259,7 +258,6 @@ final class GraphContainerView: UIView {
         chartView.animate(xAxisDuration: 0.3, yAxisDuration: 0.3)
     }
 }
-
 
 extension GraphContainerView: StockViewProtocol {
     func updateView(with graphModel: GraphModel) {

@@ -82,7 +82,7 @@ final class StockPresenter: StockPresentProtocol {
         view?.updateView(withLoader: true)
         
         service.getCharts(id: model.id, currency: "usd", days: "365", isDaily: true) { [weak self] result in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 self?.view?.updateView(withLoader: false)
                 
                 switch result {

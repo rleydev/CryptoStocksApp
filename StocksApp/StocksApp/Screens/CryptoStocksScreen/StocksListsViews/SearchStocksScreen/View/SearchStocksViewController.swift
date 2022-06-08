@@ -39,7 +39,7 @@ final class SearchStocksViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Crypto"
-        label.font = UIFont(name: "Montserrat", size: 18)
+        label.font = UIFont(name: "Montserrat-Bold", size: 18)
         label.font = .boldSystemFont(ofSize: 18)
         return label
     }()
@@ -65,6 +65,7 @@ final class SearchStocksViewController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Type cryptocurrency"
         textField.backgroundColor = .white
+        textField.returnKeyType = .search
         textField.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
         return textField
     }()
@@ -211,7 +212,6 @@ extension SearchStocksViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         presenter.searchStock(searching: textField.text!)
-        textField.returnKeyType = UIReturnKeyType.search
         return true
     }
 }
@@ -233,5 +233,4 @@ extension SearchStocksViewController: SearchStocksViewProtocol {
     func updateView(withError message: String) {
         
     }
-    
 }

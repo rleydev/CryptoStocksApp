@@ -58,7 +58,6 @@ final class FavoritesStocksViewController: UIViewController {
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
     }
 
 }
@@ -80,8 +79,6 @@ extension FavoritesStocksViewController: UITableViewDataSource {
         cell.configure(with: presenter.model(for: indexPath))
         return cell
     }
-    
-    
 }
 
 extension FavoritesStocksViewController: UITableViewDelegate {
@@ -89,7 +86,6 @@ extension FavoritesStocksViewController: UITableViewDelegate {
         let model = presenter.model(for: indexPath)
         let detailedVC = Assembly.shared.detailedVC(for: model)
         navigationController?.pushViewController(detailedVC, animated: true)
-        
     }
 }
 
@@ -98,8 +94,7 @@ extension FavoritesStocksViewController: FavoriteStocksViewProtocol {
     func updateView() {
         tableView.reloadData()
     }
-    
-    
+
     func updateView(withLoader isLoading: Bool) {
     }
     

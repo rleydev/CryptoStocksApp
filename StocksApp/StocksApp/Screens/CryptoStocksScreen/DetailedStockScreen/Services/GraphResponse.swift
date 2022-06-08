@@ -8,8 +8,8 @@
 import Foundation
 
 struct Graph: Decodable {
-    let prices: [Price]
     
+    let prices: [Price]
     
     struct Price: Decodable {
         let date: Date
@@ -22,10 +22,8 @@ struct Graph: Decodable {
             guard let time = array[safe: 0], let price = array[safe: 1] else { throw NSError() }
             let date = Date(timeIntervalSince1970: TimeInterval(time/1000))
             
-            
             self.price = price
             self.date = date
-
         }
     }
 }
