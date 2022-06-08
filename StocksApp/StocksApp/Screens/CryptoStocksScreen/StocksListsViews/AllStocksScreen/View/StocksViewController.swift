@@ -23,10 +23,12 @@ final class StocksViewController: UIViewController {
     
     
     private lazy var tableView: UITableView = {
+        
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(StockCell.self, forCellReuseIdentifier: StockCell.typeName)
         tableView.separatorStyle = .none
+        
         return tableView
     }()
 
@@ -67,7 +69,7 @@ extension StocksViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: StockCell.typeName, for: indexPath) as! StockCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: StockCell.typeName, for: indexPath) as? StockCell else { return UITableViewCell() }
         cell.selectionStyle = .none
         if indexPath.row.isMultiple(of: 2) {
             cell.cellView.backgroundColor = colorForOneCell

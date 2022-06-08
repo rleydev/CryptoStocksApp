@@ -49,9 +49,9 @@ final class Assembly {
         let thirdVC = thirdVC()
         thirdVC.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 2)
         
-        tabBar.viewControllers = [stocksVC, secondVC, thirdVC]
+        tabBar.viewControllers = [stocksVC, secondVC, thirdVC].map { UINavigationController (rootViewController: $0)}
         
-        return UINavigationController(rootViewController: tabBar)
+        return tabBar
     }
     
     func detailedVC(for model: StocksModelProtocol) -> UIViewController {

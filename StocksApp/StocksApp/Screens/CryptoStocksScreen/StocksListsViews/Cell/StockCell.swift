@@ -124,40 +124,36 @@ final class StockCell: UITableViewCell {
     
     private func setUpConstrains() {
 
-        // CellView For spacing settings
-        cellView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        cellView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        cellView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4).isActive = true
-        cellView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4).isActive = true
-        cellView.heightAnchor.constraint(equalToConstant: 68).isActive = true
-        
-        // Logo
-        iconView.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 8).isActive = true
-        iconView.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 8).isActive = true
-        iconView.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -8).isActive = true
-        iconView.heightAnchor.constraint(equalToConstant: 52).isActive = true
-        iconView.widthAnchor.constraint(equalToConstant: 52).isActive = true
-        
-        // SymbLabel
-        symbolLabel.leadingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: 12).isActive = true
-        symbolLabel.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 14).isActive = true
-        
-        // CorporationName label
-        cryptoNameLabel.leadingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: 12).isActive = true
-        cryptoNameLabel.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -14).isActive = true
-        
-        // StarButton
-        starButton.leadingAnchor.constraint(equalTo: symbolLabel.trailingAnchor, constant: 6).isActive = true
-        starButton.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 16).isActive = true
-        starButton.widthAnchor.constraint(equalToConstant: 16).isActive = true
-        starButton.heightAnchor.constraint(equalToConstant: 16).isActive = true
-        
-        //Current Price Label
-        currentPriceLabel.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 14).isActive = true
-        currentPriceLabel.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -17).isActive = true
-        
-        //ChagedPrice Label
-        changedPriceLabel.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -12).isActive = true
-        changedPriceLabel.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -14).isActive = true
-    }
+         NSLayoutConstraint.activate([
+             // CellView For spacing settings
+             cellView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+             cellView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+             cellView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
+             cellView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4),
+             cellView.heightAnchor.constraint(equalToConstant: 68),
+             // Logo
+             iconView.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 8),
+             iconView.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 8),
+             iconView.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -8),
+             iconView.heightAnchor.constraint(equalToConstant: 52),
+             iconView.widthAnchor.constraint(equalToConstant: 52),
+             // SymbLabel
+             symbolLabel.leadingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: 12),
+             symbolLabel.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 14),
+             // CorporationName label
+             cryptoNameLabel.leadingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: 12),
+             cryptoNameLabel.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -14),
+             // StarButton
+             starButton.leadingAnchor.constraint(equalTo: symbolLabel.trailingAnchor, constant: 6),
+             starButton.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 16),
+             starButton.widthAnchor.constraint(equalToConstant: 16),
+             starButton.heightAnchor.constraint(equalToConstant: 16),
+             //Current Price Label
+             currentPriceLabel.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 14),
+             currentPriceLabel.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -17),
+             //ChagedPrice Label
+             changedPriceLabel.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -12),
+             changedPriceLabel.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -14)
+         ])
+     }
 }

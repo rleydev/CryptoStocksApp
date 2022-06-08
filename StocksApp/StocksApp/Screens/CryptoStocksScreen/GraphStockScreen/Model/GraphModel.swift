@@ -16,7 +16,7 @@ struct GraphModel {
         let prices: [Double]
     }
     
-    func build(from response: Charts) -> GraphModel {
+    func build(from response: Graph) -> GraphModel {
         
         let weeklyPeriod = Period(name: "W", prices: response.prices.map { $0.price }.reversed()[0...6].reversed())
         

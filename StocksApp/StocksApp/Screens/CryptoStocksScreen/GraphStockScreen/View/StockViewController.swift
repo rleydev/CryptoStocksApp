@@ -12,13 +12,16 @@ final class StockViewController: UIViewController {
     private var favouriteAction: (() -> Void)?
     
     private lazy var stackView: UIStackView = {
+        
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 4
+        
         return stackView
     }()
     
     private lazy var graphContainerView: GraphContainerView = {
+        
         let view = GraphContainerView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
@@ -27,54 +30,57 @@ final class StockViewController: UIViewController {
     }()
     
     private lazy var titleLabel: UILabel = {
+        
         let titleLabel = UILabel()
         titleLabel.textAlignment = .center
         titleLabel.text = "Title"
         titleLabel.font = UIFont(name: "Montserrat", size: 18)
         titleLabel.font = .boldSystemFont(ofSize: 18)
-        titleLabel.textColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
+        titleLabel.textColor = .black
+        
         return titleLabel
     }()
     
     private lazy var subtitleLabel: UILabel = {
+        
         let subtitleLabel = UILabel()
         subtitleLabel.textAlignment = .center
         subtitleLabel.text = "Name"
         subtitleLabel.font = UIFont(name: "Montserrat-SemiBold", size: 12)
         subtitleLabel.font = .systemFont(ofSize: 12)
-        subtitleLabel.textColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
+        subtitleLabel.textColor = .black
+        
         return subtitleLabel
     }()
     
     private lazy var currentPriceLabel: UILabel = {
+        
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = String(format: "$%.2f", "Price")
         label.font = UIFont(name: "Montserrat", size: 28)
         label.frame = CGRect(x: 0, y: 0, width: 98, height: 32)
         label.font = .boldSystemFont(ofSize: 28)
-        label.textAlignment = .center
-        label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.01
-        let color = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
-        label.textColor = color
+        label.textColor = .black
+        
         return label
     }()
     
     private lazy var pricePercentageLabel: UILabel = {
+        
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "\(String(format: "%.2f", "Change"))$ (\(String(format: "%.2f", "percentage"))%)"
         label.font = UIFont(name: "Montserrat", size: 12)
-        label.frame = CGRect(x: 0, y: 0, width: 78, height: 16)
         label.font = .boldSystemFont(ofSize: 12)
-        label.textAlignment = .center
-        label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.01
+        
         return label
     }()
     
     private lazy var buyStockButton: UIButton = {
+        
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(.white, for: .normal)
@@ -84,6 +90,7 @@ final class StockViewController: UIViewController {
         button.titleLabel?.font = UIFont(name: "Montserrat", size: 12)
         button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(buyStockButtonTapped), for: .touchUpInside)
+        
         return button
     }()
 
@@ -171,14 +178,10 @@ final class StockViewController: UIViewController {
     private func setUpConstrains() {
         
         /// Label 1
-        currentPriceLabel.widthAnchor.constraint(equalToConstant: 98).isActive = true
-        currentPriceLabel.heightAnchor.constraint(equalToConstant: 32).isActive = true
-        currentPriceLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 2).isActive = true
         currentPriceLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 162).isActive = true
+        currentPriceLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         /// Label 2
-        pricePercentageLabel.widthAnchor.constraint(equalToConstant: 78).isActive = true
-        pricePercentageLabel.heightAnchor.constraint(equalToConstant: 16).isActive = true
         pricePercentageLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
         pricePercentageLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 202).isActive = true
         

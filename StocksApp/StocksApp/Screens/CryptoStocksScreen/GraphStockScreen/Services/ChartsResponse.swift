@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Charts: Decodable {
+struct Graph: Decodable {
     let prices: [Price]
     
     

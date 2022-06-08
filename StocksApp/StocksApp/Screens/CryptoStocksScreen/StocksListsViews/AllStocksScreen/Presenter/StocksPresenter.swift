@@ -52,7 +52,7 @@ final class StocksPresenter: StocksPresenterProtocol {
             
             switch result {
             case .success(let stocks):
-                self?.stocks = stocks.map { StockModel(stock: $0) }
+                self?.stocks = stocks
                 self?.view?.updateView()
             case .failure(let error):
                 self?.view?.updateView(withError: error.localizedDescription)
@@ -65,7 +65,6 @@ final class StocksPresenter: StocksPresenterProtocol {
         stocks[indexPath.row]
     }
     
-    
 }
 
 extension StocksPresenter: FavoritesUpdateServiceProtocol {
@@ -75,7 +74,7 @@ extension StocksPresenter: FavoritesUpdateServiceProtocol {
         guard let index = stocks.firstIndex(where: { $0.id == id }) else { return }
         let indexPath = IndexPath(row: index, section: 0)
     
-        stocks[index].isFavorite.toggle()
+
         view?.updateCell(for: indexPath)
     }
 

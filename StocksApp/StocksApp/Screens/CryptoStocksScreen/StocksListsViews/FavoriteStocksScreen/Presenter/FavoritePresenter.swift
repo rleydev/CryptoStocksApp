@@ -48,7 +48,7 @@ final class FavoriteStocksPresenter: FavoriteStocksPresenterProtocol {
             
             switch result {
             case .success(let stocks):
-                let allStocks = stocks.map { StockModel(stock: $0) }
+                let allStocks = stocks
                 self?.stocks = allStocks.filter({ stock in
                     stock.isFavorite == true
                 })
