@@ -107,6 +107,7 @@ final class StockCell: UITableViewCell {
         favouriteAction = {
             model.setFavourite()
         }
+        iconView.setImage(from: model.iconURL, placeholder: UIImage(named: "questionmark.square.dashed"))
     }
     
     @objc func starButtonPressed(sender: UIButton) {

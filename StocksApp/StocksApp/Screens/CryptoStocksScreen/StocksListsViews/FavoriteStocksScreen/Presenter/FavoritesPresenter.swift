@@ -1,5 +1,5 @@
 //
-//  FavoritePresenter.swift
+//  FavoritesPresenter.swift
 //  StocksApp
 //
 //  Created by Arthur Lee on 01.06.2022.

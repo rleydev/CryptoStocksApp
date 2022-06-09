@@ -139,7 +139,7 @@ final class StockViewController: UIViewController {
     
     @objc private func favoriteButtonTapped(sender: UIButton) {
         sender.isSelected.toggle()
-        presenter.favoriteButtonTapped() 
+        presenter.favoriteButtonTapped()
     }
     
     private func setupViews() {

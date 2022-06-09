@@ -106,4 +106,3 @@ extension StocksViewController: StocksViewProtocol {
         print("Error -", message)
     }
 }
-

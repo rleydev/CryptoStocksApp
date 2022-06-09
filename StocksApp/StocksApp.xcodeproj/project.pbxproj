@@ -25,13 +25,11 @@
 		97672FBF283FCBBB00478FBD /* StocksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97672FBE283FCBBB00478FBD /* StocksService.swift */; };
 		97672FE3283FFDE400478FBD /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97672FE2283FFDE400478FBD /* StockViewController.swift */; };
 		978D7A0F28473C7500DC7D7A /* FavoritesStocksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D7A0E28473C7500DC7D7A /* FavoritesStocksView.swift */; };
-		978D7A1128473FDD00DC7D7A /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D7A1028473FDD00DC7D7A /* FavoritePresenter.swift */; };
-		97960BCE2850AD1A001C0B50 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97960BBC2850AD19001C0B50 /* Montserrat-SemiBold.ttf */; };
-		97960BD12850AD1A001C0B50 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97960BBF2850AD1A001C0B50 /* Montserrat-Bold.ttf */; };
-		97960BD42850B2D1001C0B50 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97960BD32850B2D1001C0B50 /* ArrayExtension.swift */; };
-		97960BD62850B97C001C0B50 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97960BD52850B97C001C0B50 /* NotificationExtension.swift */; };
+		978D7A1128473FDD00DC7D7A /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D7A1028473FDD00DC7D7A /* FavoritesPresenter.swift */; };
+		97AE736A284F539D00A12476 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE7369284F539D00A12476 /* UIImageViewExtension.swift */; };
+		97AE7370284F584500A12476 /* SearchStocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE736F284F584500A12476 /* SearchStocksViewController.swift */; };
+		97AE7372284F7EBE00A12476 /* SearchStocksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE7371284F7EBE00A12476 /* SearchStocksPresenter.swift */; };
 		97B1BD20284CA04C00BDB5A0 /* GraphContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B1BD1F284CA04C00BDB5A0 /* GraphContainerView.swift */; };
-		97B1BD23284CADCD00BDB5A0 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 97B1BD22284CADCD00BDB5A0 /* Charts */; };
 		97B1BD26284CC1F700BDB5A0 /* GraphModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B1BD25284CC1F700BDB5A0 /* GraphModel.swift */; };
 		97BAC7F628420B00002BF05E /* StocksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC7F528420B00002BF05E /* StocksPresenter.swift */; };
 		97BAC7FC28421155002BF05E /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC7FB28421155002BF05E /* NSObjectExtension.swift */; };
@@ -40,6 +38,12 @@
 		97BAC80228421AE3002BF05E /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC80128421AE3002BF05E /* Assembly.swift */; };
 		97EA1E9A28493608006D1592 /* FavoritesUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EA1E9928493608006D1592 /* FavoritesUpdateService.swift */; };
 		97EA1E9D28493F24006D1592 /* GraphResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EA1E9C28493F24006D1592 /* GraphResponse.swift */; };
+		97F6F388285118AF006806AD /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F6F387285118AF006806AD /* ArrayExtension.swift */; };
+		97F6F38A285118CF006806AD /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F6F389285118CF006806AD /* NotificationExtension.swift */; };
+		97F6F39428511A72006806AD /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97F6F38E28511A72006806AD /* Montserrat-Bold.ttf */; };
+		97F6F39528511A72006806AD /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97F6F38F28511A72006806AD /* Montserrat-SemiBold.ttf */; };
+		97FDA4CF2851D99200556496 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 97FDA4CE2851D99200556496 /* Charts */; };
+		97FDA4D22851D9A500556496 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 97FDA4D12851D9A500556496 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,11 +67,10 @@
 		97672FBE283FCBBB00478FBD /* StocksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksService.swift; sourceTree = "<group>"; };
 		97672FE2283FFDE400478FBD /* StockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
 		978D7A0E28473C7500DC7D7A /* FavoritesStocksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStocksView.swift; sourceTree = "<group>"; };
-		978D7A1028473FDD00DC7D7A /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
-		97960BBC2850AD19001C0B50 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
-		97960BBF2850AD1A001C0B50 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
-		97960BD32850B2D1001C0B50 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
-		97960BD52850B97C001C0B50 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
+		978D7A1028473FDD00DC7D7A /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
+		97AE7369284F539D00A12476 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		97AE736F284F584500A12476 /* SearchStocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStocksViewController.swift; sourceTree = "<group>"; };
+		97AE7371284F7EBE00A12476 /* SearchStocksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStocksPresenter.swift; sourceTree = "<group>"; };
 		97B1BD1F284CA04C00BDB5A0 /* GraphContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphContainerView.swift; sourceTree = "<group>"; };
 		97B1BD25284CC1F700BDB5A0 /* GraphModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphModel.swift; sourceTree = "<group>"; };
 		97BAC7F528420B00002BF05E /* StocksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksPresenter.swift; sourceTree = "<group>"; };
@@ -77,6 +80,10 @@
 		97BAC80128421AE3002BF05E /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		97EA1E9928493608006D1592 /* FavoritesUpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesUpdateService.swift; sourceTree = "<group>"; };
 		97EA1E9C28493F24006D1592 /* GraphResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphResponse.swift; sourceTree = "<group>"; };
+		97F6F387285118AF006806AD /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		97F6F389285118CF006806AD /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
+		97F6F38E28511A72006806AD /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		97F6F38F28511A72006806AD /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +91,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97B1BD23284CADCD00BDB5A0 /* Charts in Frameworks */,
+				97FDA4D22851D9A500556496 /* Kingfisher in Frameworks */,
+				97FDA4CF2851D99200556496 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +102,7 @@
 		97030A1B283CC821004D9D88 = {
 			isa = PBXGroup;
 			children = (
-				97960BAD2850ACC6001C0B50 /* Fonts */,
+				97F6F38B28511A72006806AD /* Fonts */,
 				97030A26283CC821004D9D88 /* StocksApp */,
 				97030A25283CC821004D9D88 /* Products */,
 			);
@@ -119,7 +127,7 @@
 			path = StocksApp;
 			sourceTree = "<group>";
 		};
-		9764BFB6284637FF00D0CA67 /* GraphStockScreen */ = {
+		9764BFB6284637FF00D0CA67 /* DetailedStockScreen */ = {
 			isa = PBXGroup;
 			children = (
 				97EA1E9B28493F17006D1592 /* Services */,
@@ -127,7 +135,7 @@
 				9764BFB92846383900D0CA67 /* View */,
 				9764BFB82846382200D0CA67 /* Presenter */,
 			);
-			path = GraphStockScreen;
+			path = DetailedStockScreen;
 			sourceTree = "<group>";
 		};
 		9764BFB82846382200D0CA67 /* Presenter */ = {
@@ -142,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				97672FE2283FFDE400478FBD /* StockViewController.swift */,
-				97B1BD27284D2D7A00BDB5A0 /* GraphView */,
+				97B1BD27284D2D7A00BDB5A0 /* GraphContainer */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,7 +186,7 @@
 		9764BFC82846B47E00D0CA67 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				978D7A1028473FDD00DC7D7A /* FavoritePresenter.swift */,
+				978D7A1028473FDD00DC7D7A /* FavoritesPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -188,7 +196,7 @@
 			children = (
 				97672FAF283FC8C900478FBD /* Service */,
 				978D7A15284758F100DC7D7A /* StocksListsViews */,
-				9764BFB6284637FF00D0CA67 /* GraphStockScreen */,
+				9764BFB6284637FF00D0CA67 /* DetailedStockScreen */,
 			);
 			path = CryptoStocksScreen;
 			sourceTree = "<group>";
@@ -260,27 +268,36 @@
 			children = (
 				97672FB0283FC8E900478FBD /* Model */,
 				97672FAB283FC86100478FBD /* Cell */,
+				97AE736C284F56D400A12476 /* SearchStocksScreen */,
 				9764BFC62846B42800D0CA67 /* FavoriteStocksScreen */,
 				97BAC7F428420AC7002BF05E /* AllStocksScreen */,
 			);
 			path = StocksListsViews;
 			sourceTree = "<group>";
 		};
-		97960BAD2850ACC6001C0B50 /* Fonts */ = {
+		97AE736C284F56D400A12476 /* SearchStocksScreen */ = {
 			isa = PBXGroup;
 			children = (
-				97960BAE2850AD00001C0B50 /* Montserrat */,
+				97AE736E284F56E900A12476 /* Presenter */,
+				97AE736D284F56E200A12476 /* View */,
 			);
-			path = Fonts;
+			path = SearchStocksScreen;
 			sourceTree = "<group>";
 		};
-		97960BAE2850AD00001C0B50 /* Montserrat */ = {
+		97AE736D284F56E200A12476 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				97960BBF2850AD1A001C0B50 /* Montserrat-Bold.ttf */,
-				97960BBC2850AD19001C0B50 /* Montserrat-SemiBold.ttf */,
+				97AE736F284F584500A12476 /* SearchStocksViewController.swift */,
 			);
-			path = Montserrat;
+			path = View;
+			sourceTree = "<group>";
+		};
+		97AE736E284F56E900A12476 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				97AE7371284F7EBE00A12476 /* SearchStocksPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		97B1BD24284CC1E200BDB5A0 /* Model */ = {
@@ -291,12 +308,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		97B1BD27284D2D7A00BDB5A0 /* GraphView */ = {
+		97B1BD27284D2D7A00BDB5A0 /* GraphContainer */ = {
 			isa = PBXGroup;
 			children = (
 				97B1BD1F284CA04C00BDB5A0 /* GraphContainerView.swift */,
 			);
-			path = GraphView;
+			path = GraphContainer;
 			sourceTree = "<group>";
 		};
 		97BAC7F328420AA1002BF05E /* Presenter */ = {
@@ -348,9 +365,10 @@
 			isa = PBXGroup;
 			children = (
 				97BAC7FB28421155002BF05E /* NSObjectExtension.swift */,
+				97F6F387285118AF006806AD /* ArrayExtension.swift */,
 				97030A3D283D2B07004D9D88 /* UIColorExtension.swift */,
-				97960BD32850B2D1001C0B50 /* ArrayExtension.swift */,
-				97960BD52850B97C001C0B50 /* NotificationExtension.swift */,
+				97F6F389285118CF006806AD /* NotificationExtension.swift */,
+				97AE7369284F539D00A12476 /* UIImageViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -361,6 +379,23 @@
 				97EA1E9C28493F24006D1592 /* GraphResponse.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		97F6F38B28511A72006806AD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				97F6F38C28511A72006806AD /* Montserrat */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		97F6F38C28511A72006806AD /* Montserrat */ = {
+			isa = PBXGroup;
+			children = (
+				97F6F38E28511A72006806AD /* Montserrat-Bold.ttf */,
+				97F6F38F28511A72006806AD /* Montserrat-SemiBold.ttf */,
+			);
+			path = Montserrat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,7 +415,8 @@
 			);
 			name = StocksApp;
 			packageProductDependencies = (
-				97B1BD22284CADCD00BDB5A0 /* Charts */,
+				97FDA4CE2851D99200556496 /* Charts */,
+				97FDA4D12851D9A500556496 /* Kingfisher */,
 			);
 			productName = StocksApp;
 			productReference = 97030A24283CC821004D9D88 /* StocksApp.app */;
@@ -411,7 +447,8 @@
 			);
 			mainGroup = 97030A1B283CC821004D9D88;
 			packageReferences = (
-				97B1BD21284CADCC00BDB5A0 /* XCRemoteSwiftPackageReference "Charts" */,
+				97FDA4CD2851D99200556496 /* XCRemoteSwiftPackageReference "Charts" */,
+				97FDA4D02851D9A500556496 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 97030A25283CC821004D9D88 /* Products */;
 			projectDirPath = "";
@@ -427,10 +464,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97960BD12850AD1A001C0B50 /* Montserrat-Bold.ttf in Resources */,
+				97F6F39428511A72006806AD /* Montserrat-Bold.ttf in Resources */,
 				97030A34283CC822004D9D88 /* LaunchScreen.storyboard in Resources */,
-				97960BCE2850AD1A001C0B50 /* Montserrat-SemiBold.ttf in Resources */,
 				97030A31283CC822004D9D88 /* Assets.xcassets in Resources */,
+				97F6F39528511A72006806AD /* Montserrat-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97030A2C283CC821004D9D88 /* StocksViewController.swift in Sources */,
+				97AE736A284F539D00A12476 /* UIImageViewExtension.swift in Sources */,
 				978D7A0F28473C7500DC7D7A /* FavoritesStocksView.swift in Sources */,
 				97BAC7FC28421155002BF05E /* NSObjectExtension.swift in Sources */,
 				97BAC7F628420B00002BF05E /* StocksPresenter.swift in Sources */,
@@ -450,10 +488,13 @@
 				9764BFC528467BE800D0CA67 /* FavoritesServiceProtocol.swift in Sources */,
 				97EA1E9A28493608006D1592 /* FavoritesUpdateService.swift in Sources */,
 				97672FB8283FC96E00478FBD /* NetworkError.swift in Sources */,
+				97AE7370284F584500A12476 /* SearchStocksViewController.swift in Sources */,
 				97BAC7FE284211CE002BF05E /* StocksRouter.swift in Sources */,
 				97672FBF283FCBBB00478FBD /* StocksService.swift in Sources */,
 				97672FBC283FCA2E00478FBD /* StockModel.swift in Sources */,
 				97030A3E283D2B07004D9D88 /* UIColorExtension.swift in Sources */,
+				97F6F388285118AF006806AD /* ArrayExtension.swift in Sources */,
+				97F6F38A285118CF006806AD /* NotificationExtension.swift in Sources */,
 				97672FB4283FC93400478FBD /* Router.swift in Sources */,
 				97BAC80228421AE3002BF05E /* Assembly.swift in Sources */,
 				97672FE3283FFDE400478FBD /* StockViewController.swift in Sources */,
@@ -461,14 +502,13 @@
 				97B1BD20284CA04C00BDB5A0 /* GraphContainerView.swift in Sources */,
 				71D0B1F6284291A40020A708 /* StockPresenter.swift in Sources */,
 				9764BFC328467BCB00D0CA67 /* FileManager.swift in Sources */,
+				97AE7372284F7EBE00A12476 /* SearchStocksPresenter.swift in Sources */,
 				97672FBA283FC99100478FBD /* HTTPMethod.swift in Sources */,
-				97960BD42850B2D1001C0B50 /* ArrayExtension.swift in Sources */,
 				97030A28283CC821004D9D88 /* AppDelegate.swift in Sources */,
 				97672FB6283FC95100478FBD /* NetworkService.swift in Sources */,
 				97030A3C283CEA4D004D9D88 /* StockCell.swift in Sources */,
 				97B1BD26284CC1F700BDB5A0 /* GraphModel.swift in Sources */,
-				97960BD62850B97C001C0B50 /* NotificationExtension.swift in Sources */,
-				978D7A1128473FDD00DC7D7A /* FavoritePresenter.swift in Sources */,
+				978D7A1128473FDD00DC7D7A /* FavoritesPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,7 +577,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -592,7 +632,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -612,12 +652,13 @@
 				DEVELOPMENT_TEAM = A3U43FT35S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StocksApp/Application/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CryptoStocksApp;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -641,12 +682,13 @@
 				DEVELOPMENT_TEAM = A3U43FT35S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StocksApp/Application/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CryptoStocksApp;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -684,7 +726,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		97B1BD21284CADCC00BDB5A0 /* XCRemoteSwiftPackageReference "Charts" */ = {
+		97FDA4CD2851D99200556496 /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
 			requirement = {
@@ -692,13 +734,26 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		97FDA4D02851D9A500556496 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		97B1BD22284CADCD00BDB5A0 /* Charts */ = {
+		97FDA4CE2851D99200556496 /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 97B1BD21284CADCC00BDB5A0 /* XCRemoteSwiftPackageReference "Charts" */;
+			package = 97FDA4CD2851D99200556496 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
+		};
+		97FDA4D12851D9A500556496 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97FDA4D02851D9A500556496 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
