@@ -26,8 +26,7 @@
 - Crypto list's API: https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=100
 - Prices' API: https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=600&interval=daily
 (where "bitcoin" - id of cryptocurrency)
-- FavoritesService: NSNotification, FileManager (UserDefaults - optional)
-</p>
+- FavoritesService: NSNotificationCenter, FileManager, UserDefaults - optional.
 </p>
 <p align="center">
         Code reviewers: tauypaldiyev, justadlet.
