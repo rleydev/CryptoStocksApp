@@ -85,8 +85,7 @@ final class SearchStocksPresenter: SearchStocksPresenterProtocol {
 extension SearchStocksPresenter: FavoritesUpdateServiceProtocol {
     
     func setFavoriteNotification(notification: Notification) {
-        guard let id = notification.stockID else { return }
-        guard let index = stocks.firstIndex(where: { $0.id == id }) else { return }
+        guard let id = notification.stockID, let index = stocks.firstIndex(where: { $0.id == id }) else { return }
         let indexPath = IndexPath(row: index, section: 0)
 
         view?.updateCell(for: indexPath)
