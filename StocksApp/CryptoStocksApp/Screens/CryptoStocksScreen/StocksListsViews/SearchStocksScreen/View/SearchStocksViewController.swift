@@ -108,6 +108,7 @@ final class SearchStocksViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        clearTextField()
         presenter.loadView()
         
     }
@@ -174,17 +175,21 @@ final class SearchStocksViewController: UIViewController {
     }
     
     @objc private func clearButtonTapped() {
-        searchTextField.text = ""
+        clearTextField()
     }
     
     @objc private func cancelButtonTapped() {
-        searchTextField.text = ""
+        clearTextField()
         presenter.loadView()
         tableView.reloadData()
     }
     
     @objc private func textFieldDidChanged(sender: UITextField) {
         presenter.searchStock(searching: sender.text!)
+    }
+    
+    private func clearTextField() {
+        searchTextField.text = ""
     }
 }
 
