@@ -31,6 +31,8 @@
 		97AE7372284F7EBE00A12476 /* SearchStocksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE7371284F7EBE00A12476 /* SearchStocksPresenter.swift */; };
 		97B1BD20284CA04C00BDB5A0 /* GraphContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B1BD1F284CA04C00BDB5A0 /* GraphContainerView.swift */; };
 		97B1BD26284CC1F700BDB5A0 /* GraphModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B1BD25284CC1F700BDB5A0 /* GraphModel.swift */; };
+		97BA7D582851FF9000AA9983 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 97BA7D572851FF9000AA9983 /* Charts */; };
+		97BA7D5B2851FF9F00AA9983 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 97BA7D5A2851FF9F00AA9983 /* Kingfisher */; };
 		97BAC7F628420B00002BF05E /* StocksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC7F528420B00002BF05E /* StocksPresenter.swift */; };
 		97BAC7FC28421155002BF05E /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC7FB28421155002BF05E /* NSObjectExtension.swift */; };
 		97BAC7FE284211CE002BF05E /* StocksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAC7FD284211CE002BF05E /* StocksRouter.swift */; };
@@ -42,13 +44,11 @@
 		97F6F38A285118CF006806AD /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F6F389285118CF006806AD /* NotificationExtension.swift */; };
 		97F6F39428511A72006806AD /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97F6F38E28511A72006806AD /* Montserrat-Bold.ttf */; };
 		97F6F39528511A72006806AD /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97F6F38F28511A72006806AD /* Montserrat-SemiBold.ttf */; };
-		97FDA4CF2851D99200556496 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 97FDA4CE2851D99200556496 /* Charts */; };
-		97FDA4D22851D9A500556496 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 97FDA4D12851D9A500556496 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		71D0B1F5284291A40020A708 /* StockPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPresenter.swift; sourceTree = "<group>"; };
-		97030A24283CC821004D9D88 /* StocksApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StocksApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		97030A24283CC821004D9D88 /* CryptoStocksApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoStocksApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97030A27283CC821004D9D88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97030A2B283CC821004D9D88 /* StocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksViewController.swift; sourceTree = "<group>"; };
 		97030A30283CC822004D9D88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,8 +91,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97FDA4D22851D9A500556496 /* Kingfisher in Frameworks */,
-				97FDA4CF2851D99200556496 /* Charts in Frameworks */,
+				97BA7D5B2851FF9F00AA9983 /* Kingfisher in Frameworks */,
+				97BA7D582851FF9000AA9983 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				97F6F38B28511A72006806AD /* Fonts */,
-				97030A26283CC821004D9D88 /* StocksApp */,
+				97030A26283CC821004D9D88 /* CryptoStocksApp */,
 				97030A25283CC821004D9D88 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -111,12 +111,12 @@
 		97030A25283CC821004D9D88 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				97030A24283CC821004D9D88 /* StocksApp.app */,
+				97030A24283CC821004D9D88 /* CryptoStocksApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		97030A26283CC821004D9D88 /* StocksApp */ = {
+		97030A26283CC821004D9D88 /* CryptoStocksApp */ = {
 			isa = PBXGroup;
 			children = (
 				97BAC7F928421131002BF05E /* Core */,
@@ -124,7 +124,7 @@
 				97BAC7F7284210D2002BF05E /* Application */,
 				97672FAC283FC88E00478FBD /* Screens */,
 			);
-			path = StocksApp;
+			path = CryptoStocksApp;
 			sourceTree = "<group>";
 		};
 		9764BFB6284637FF00D0CA67 /* DetailedStockScreen */ = {
@@ -401,9 +401,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		97030A23283CC821004D9D88 /* StocksApp */ = {
+		97030A23283CC821004D9D88 /* CryptoStocksApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 97030A38283CC822004D9D88 /* Build configuration list for PBXNativeTarget "StocksApp" */;
+			buildConfigurationList = 97030A38283CC822004D9D88 /* Build configuration list for PBXNativeTarget "CryptoStocksApp" */;
 			buildPhases = (
 				97030A20283CC821004D9D88 /* Sources */,
 				97030A21283CC821004D9D88 /* Frameworks */,
@@ -413,13 +413,13 @@
 			);
 			dependencies = (
 			);
-			name = StocksApp;
+			name = CryptoStocksApp;
 			packageProductDependencies = (
-				97FDA4CE2851D99200556496 /* Charts */,
-				97FDA4D12851D9A500556496 /* Kingfisher */,
+				97BA7D572851FF9000AA9983 /* Charts */,
+				97BA7D5A2851FF9F00AA9983 /* Kingfisher */,
 			);
 			productName = StocksApp;
-			productReference = 97030A24283CC821004D9D88 /* StocksApp.app */;
+			productReference = 97030A24283CC821004D9D88 /* CryptoStocksApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -437,7 +437,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 97030A1F283CC821004D9D88 /* Build configuration list for PBXProject "StocksApp" */;
+			buildConfigurationList = 97030A1F283CC821004D9D88 /* Build configuration list for PBXProject "CryptoStocksApp" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -447,14 +447,14 @@
 			);
 			mainGroup = 97030A1B283CC821004D9D88;
 			packageReferences = (
-				97FDA4CD2851D99200556496 /* XCRemoteSwiftPackageReference "Charts" */,
-				97FDA4D02851D9A500556496 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				97BA7D562851FF9000AA9983 /* XCRemoteSwiftPackageReference "Charts" */,
+				97BA7D592851FF9F00AA9983 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 97030A25283CC821004D9D88 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				97030A23283CC821004D9D88 /* StocksApp */,
+				97030A23283CC821004D9D88 /* CryptoStocksApp */,
 			);
 		};
 /* End PBXProject section */
@@ -647,12 +647,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A3U43FT35S;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = StocksApp/Application/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = CryptoStocksApp;
+				INFOPLIST_FILE = CryptoStocksApp/Application/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CryptoApp;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -677,12 +678,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A3U43FT35S;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = StocksApp/Application/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = CryptoStocksApp;
+				INFOPLIST_FILE = CryptoStocksApp/Application/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CryptoApp;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -705,7 +707,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		97030A1F283CC821004D9D88 /* Build configuration list for PBXProject "StocksApp" */ = {
+		97030A1F283CC821004D9D88 /* Build configuration list for PBXProject "CryptoStocksApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				97030A36283CC822004D9D88 /* Debug */,
@@ -714,7 +716,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		97030A38283CC822004D9D88 /* Build configuration list for PBXNativeTarget "StocksApp" */ = {
+		97030A38283CC822004D9D88 /* Build configuration list for PBXNativeTarget "CryptoStocksApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				97030A39283CC822004D9D88 /* Debug */,
@@ -726,7 +728,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		97FDA4CD2851D99200556496 /* XCRemoteSwiftPackageReference "Charts" */ = {
+		97BA7D562851FF9000AA9983 /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
 			requirement = {
@@ -734,7 +736,7 @@
 				minimumVersion = 4.0.0;
 			};
 		};
-		97FDA4D02851D9A500556496 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		97BA7D592851FF9F00AA9983 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
@@ -745,14 +747,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		97FDA4CE2851D99200556496 /* Charts */ = {
+		97BA7D572851FF9000AA9983 /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 97FDA4CD2851D99200556496 /* XCRemoteSwiftPackageReference "Charts" */;
+			package = 97BA7D562851FF9000AA9983 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
 		};
-		97FDA4D12851D9A500556496 /* Kingfisher */ = {
+		97BA7D5A2851FF9F00AA9983 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 97FDA4D02851D9A500556496 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = 97BA7D592851FF9F00AA9983 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
