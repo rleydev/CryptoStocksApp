@@ -1,6 +1,5 @@
 # CryptoStocks App 
 <br />
-<p align="center">
     <p align="center">
         iOS pet project app for observing crypto stocks (100 items) 
     </p>
@@ -11,7 +10,7 @@
 <img src= "Screenshots/Search_portrait.png" width="200">
 </p>
 <p align="center">
-<img src= "Screenshots/Graphic_1Year_portrait.png" width="200">
+<img src= "Screenshots/Graphic_6Month_portrait.png" width="200">
 <img src= "Screenshots/Graphic_1Week_portrait.png" width="200">
 <img src= "Screenshots/Detaied_Button_portrait.png" width="200">
 </p>
