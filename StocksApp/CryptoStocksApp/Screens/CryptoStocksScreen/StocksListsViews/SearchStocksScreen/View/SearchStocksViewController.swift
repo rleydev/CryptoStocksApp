@@ -78,6 +78,8 @@ final class SearchStocksViewController: UIViewController {
         textField.placeholder = "Type cryptocurrency"
         textField.backgroundColor = .white
         textField.returnKeyType = .search
+        textField.autocorrectionType = .no
+        textField.autocapitalizationType = .none
         textField.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
         
         return textField
