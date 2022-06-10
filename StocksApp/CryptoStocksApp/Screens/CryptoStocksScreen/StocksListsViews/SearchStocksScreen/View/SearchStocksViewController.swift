@@ -45,6 +45,7 @@ final class SearchStocksViewController: UIViewController {
         
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Crypto"
         label.font = UIFont(name: "Montserrat-Bold", size: 18)
         
         return label
@@ -81,8 +82,6 @@ final class SearchStocksViewController: UIViewController {
         
         return textField
     }()
-
-    private let colorForOneCell = UIColor(r: 240, g: 244, b: 247)
     
     private var presenter: SearchStocksPresenterProtocol
     
@@ -159,7 +158,7 @@ final class SearchStocksViewController: UIViewController {
             
             /// titleOfList
             titleOfList.leadingAnchor.constraint(equalTo: titleViewContainer.leadingAnchor),
-            titleOfList.topAnchor.constraint(equalTo: titleViewContainer.topAnchor, constant: 9),
+            titleOfList.topAnchor.constraint(equalTo: titleViewContainer.topAnchor, constant: 4),
             
             cancelButton.leadingAnchor.constraint(equalTo: searchViewContainer.leadingAnchor, constant: 16),
             cancelButton.topAnchor.constraint(equalTo: searchViewContainer.topAnchor, constant: 13),
@@ -205,7 +204,7 @@ extension SearchStocksViewController: UITableViewDataSource {
         
         cell.selectionStyle = .none
         if indexPath.row.isMultiple(of: 2) {
-            cell.cellView.backgroundColor = colorForOneCell
+            cell.cellView.backgroundColor = UIColor.CustomColors.customLightGray
         } else {
             cell.cellView.backgroundColor = .white
         }
