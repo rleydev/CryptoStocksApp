@@ -72,7 +72,7 @@ final class SearchStocksPresenter: SearchStocksPresenterProtocol {
             
             switch result {
             case .success(let stocks):
-                self?.stocks = stocks.filter({ $0.id == text || $0.name == text || $0.symbol == text })
+                self?.stocks = stocks.filter({ $0.id.contains(text) || $0.name.contains(text) || $0.symbol.contains(text)})
                 self?.view?.updateView()
             case .failure(let error):
                 self?.view?.updateView(withError: error.localizedDescription)
