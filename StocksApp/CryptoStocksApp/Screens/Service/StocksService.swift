@@ -57,7 +57,7 @@ final class StocksService: StocksServiceProtocol {
 
 extension StocksServiceProtocol {
     func getStocks(currency: String, completion: @escaping (Result<[StocksModelProtocol], NetworkError>) -> Void) {
-        getStocks(currency: currency, count: "100", completion: completion)
+        getStocks(currency: currency, count: "50", completion: completion)
     }
     
     func getStocks(completion: @escaping (Result<[StocksModelProtocol], NetworkError>) -> Void) {

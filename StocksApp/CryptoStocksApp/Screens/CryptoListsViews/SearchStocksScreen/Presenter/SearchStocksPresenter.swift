@@ -20,8 +20,9 @@ protocol SearchStocksPresenterProtocol {
     var stocks: [StocksModelProtocol] { get }
     var itemCount: Int { get }
     func loadView()
-    func model(for indexPath: IndexPath) -> StocksModelProtocol
+    func model(for indexPath: Int) -> StocksModelProtocol
     func searchStock(searching text: String)
+    func moveToDetailedScreen(at index: Int)
 }
 
 
@@ -30,6 +31,8 @@ final class SearchStocksPresenter: SearchStocksPresenterProtocol {
     private let service: StocksServiceProtocol
     
     var stocks: [StocksModelProtocol] = []
+    
+    var coordinator: CoordinatorProtocol?
 
     var itemCount: Int {
         stocks.count
@@ -60,8 +63,12 @@ final class SearchStocksPresenter: SearchStocksPresenterProtocol {
         }
     }
     
-    func model(for indexPath: IndexPath) -> StocksModelProtocol {
-        stocks[indexPath.row]
+    func model(for indexPath: Int) -> StocksModelProtocol {
+        stocks[indexPath]
+    }
+    
+    func moveToDetailedScreen(at index: Int) {
+        coordinator?.moveFromSearchStocks(with: model(for: index))
     }
     
     func searchStock(searching text: String) {

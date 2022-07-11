@@ -23,6 +23,8 @@ final class Assembly {
         let presenter = StocksPresenter(service: stockService)
         let view = StocksViewController(presenter: presenter)
         presenter.view = view
+        presenter.coordinator = Coordinator()
+        presenter.coordinator?.allStocksView = view
         return view
     }
     
@@ -30,6 +32,8 @@ final class Assembly {
         let presenter = FavoriteStocksPresenter(service: stockService)
         let view = FavoritesStocksViewController(presenter: presenter)
         presenter.view = view
+        presenter.coordinator = Coordinator()
+        presenter.coordinator?.favoriteView = view
         return view
         
     }
@@ -38,6 +42,8 @@ final class Assembly {
         let presenter = SearchStocksPresenter(service: stockService)
         let view = SearchStocksViewController(presenter: presenter)
         presenter.view = view
+        presenter.coordinator = Coordinator()
+        presenter.coordinator?.searchView = view
         return view
     }
     
