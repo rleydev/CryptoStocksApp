@@ -16,17 +16,21 @@ protocol StocksViewProtocol: AnyObject {
 }
 
 protocol StocksPresenterProtocol {
+    var coordinator: CoordinatorProtocol? { get set }
     var view: StocksViewProtocol? { get set }
     var stocks: [StocksModelProtocol] { get }
     var itemCount: Int { get }
     func loadView()
-    func model(for indexPath: IndexPath) -> StocksModelProtocol
+    func moveToDetailedScreen(at index: Int)
+    func model(for indexPath: Int) -> StocksModelProtocol
 }
 
 
 final class StocksPresenter: StocksPresenterProtocol {
 
     private let service: StocksServiceProtocol
+    
+    var coordinator: CoordinatorProtocol?
     
     var stocks: [StocksModelProtocol] = []
 
@@ -59,8 +63,12 @@ final class StocksPresenter: StocksPresenterProtocol {
         }
     }
     
-    func model(for indexPath: IndexPath) -> StocksModelProtocol {
-        stocks[indexPath.row]
+    func model(for indexPath: Int) -> StocksModelProtocol {
+        stocks[indexPath]
+    }
+    
+    func moveToDetailedScreen(at index: Int) {
+        coordinator?.moveFromAllStocks(with: model(for: index))
     }
 }
 

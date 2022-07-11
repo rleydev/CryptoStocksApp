@@ -19,7 +19,8 @@ protocol FavoriteStocksPresenterProtocol {
     var stocks: [StocksModelProtocol] { get }
     var itemCount: Int { get }
     func loadView()
-    func model(for indexPath: IndexPath) -> StocksModelProtocol
+    func model(for indexPath: Int) -> StocksModelProtocol
+    func moveToDetailedScreen(at index: Int)
 }
 
 final class FavoriteStocksPresenter: FavoriteStocksPresenterProtocol {
@@ -27,6 +28,8 @@ final class FavoriteStocksPresenter: FavoriteStocksPresenterProtocol {
     private let service: StocksServiceProtocol
     
     var stocks: [StocksModelProtocol] = []
+    
+    var coordinator: CoordinatorProtocol?
     
     var itemCount: Int {
         stocks.count
@@ -56,8 +59,12 @@ final class FavoriteStocksPresenter: FavoriteStocksPresenterProtocol {
         }
     }
     
-    func model(for indexPath: IndexPath) -> StocksModelProtocol {
-        stocks[indexPath.row]
+    func model(for indexPath: Int) -> StocksModelProtocol {
+        stocks[indexPath]
+    }
+    
+    func moveToDetailedScreen(at index: Int) {
+        coordinator?.moveFromFavoriteStocks(with: model(for: index))
     }
     
 }

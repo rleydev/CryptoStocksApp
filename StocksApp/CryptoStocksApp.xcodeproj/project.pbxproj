@@ -27,6 +27,7 @@
 		97672FE3283FFDE400478FBD /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97672FE2283FFDE400478FBD /* StockViewController.swift */; };
 		978D7A0F28473C7500DC7D7A /* FavoritesStocksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D7A0E28473C7500DC7D7A /* FavoritesStocksView.swift */; };
 		978D7A1128473FDD00DC7D7A /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D7A1028473FDD00DC7D7A /* FavoritesPresenter.swift */; };
+		97A6AD70287C2D65009F2A7E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6AD6F287C2D65009F2A7E /* Coordinator.swift */; };
 		97AE736A284F539D00A12476 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE7369284F539D00A12476 /* UIImageViewExtension.swift */; };
 		97AE7370284F584500A12476 /* SearchStocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE736F284F584500A12476 /* SearchStocksViewController.swift */; };
 		97AE7372284F7EBE00A12476 /* SearchStocksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE7371284F7EBE00A12476 /* SearchStocksPresenter.swift */; };
@@ -81,6 +82,7 @@
 		97672FE2283FFDE400478FBD /* StockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
 		978D7A0E28473C7500DC7D7A /* FavoritesStocksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStocksView.swift; sourceTree = "<group>"; };
 		978D7A1028473FDD00DC7D7A /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
+		97A6AD6F287C2D65009F2A7E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		97AE7369284F539D00A12476 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		97AE736F284F584500A12476 /* SearchStocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStocksViewController.swift; sourceTree = "<group>"; };
 		97AE7371284F7EBE00A12476 /* SearchStocksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStocksPresenter.swift; sourceTree = "<group>"; };
@@ -141,10 +143,10 @@
 		97030A26283CC821004D9D88 /* CryptoStocksApp */ = {
 			isa = PBXGroup;
 			children = (
+				97672FAC283FC88E00478FBD /* Screens */,
 				97BAC7F928421131002BF05E /* Core */,
 				97BAC7F828421108002BF05E /* Resources */,
 				97BAC7F7284210D2002BF05E /* Application */,
-				97672FAC283FC88E00478FBD /* Screens */,
 			);
 			path = CryptoStocksApp;
 			sourceTree = "<group>";
@@ -221,16 +223,6 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		97672FAA283FC83000478FBD /* CryptoStocksScreen */ = {
-			isa = PBXGroup;
-			children = (
-				97672FAF283FC8C900478FBD /* Service */,
-				978D7A15284758F100DC7D7A /* StocksListsViews */,
-				9764BFB6284637FF00D0CA67 /* DetailedStockScreen */,
-			);
-			path = CryptoStocksScreen;
-			sourceTree = "<group>";
-		};
 		97672FAB283FC86100478FBD /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,7 +234,9 @@
 		97672FAC283FC88E00478FBD /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				97672FAA283FC83000478FBD /* CryptoStocksScreen */,
+				97672FAF283FC8C900478FBD /* Service */,
+				97A6AD71287C3C5A009F2A7E /* CryptoListsViews */,
+				9764BFB6284637FF00D0CA67 /* DetailedStockScreen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -293,7 +287,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		978D7A15284758F100DC7D7A /* StocksListsViews */ = {
+		97A6AD71287C3C5A009F2A7E /* CryptoListsViews */ = {
 			isa = PBXGroup;
 			children = (
 				97672FB0283FC8E900478FBD /* Model */,
@@ -302,7 +296,7 @@
 				9764BFC62846B42800D0CA67 /* FavoriteStocksScreen */,
 				97BAC7F428420AC7002BF05E /* AllStocksScreen */,
 			);
-			path = StocksListsViews;
+			path = CryptoListsViews;
 			sourceTree = "<group>";
 		};
 		97AE736C284F56D400A12476 /* SearchStocksScreen */ = {
@@ -385,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				97BAC80128421AE3002BF05E /* Assembly.swift */,
+				97A6AD6F287C2D65009F2A7E /* Coordinator.swift */,
 				97672FAD283FC8A000478FBD /* Services */,
 				97BAC7FA28421136002BF05E /* Extensions */,
 			);
@@ -555,6 +550,7 @@
 				97672FBC283FCA2E00478FBD /* StockModel.swift in Sources */,
 				97030A3E283D2B07004D9D88 /* UIColorExtension.swift in Sources */,
 				97F6F388285118AF006806AD /* ArrayExtension.swift in Sources */,
+				97A6AD70287C2D65009F2A7E /* Coordinator.swift in Sources */,
 				97F6F38A285118CF006806AD /* NotificationExtension.swift in Sources */,
 				97672FB4283FC93400478FBD /* Router.swift in Sources */,
 				97BAC80228421AE3002BF05E /* Assembly.swift in Sources */,
