@@ -12,7 +12,7 @@ protocol StocksViewProtocol: AnyObject {
     func updateCell(for indexPath: IndexPath)
     func updateView(withLoader isLoading: Bool)
     func updateView(withError message: String)
-
+    func showNetworkErrorAlert()
 }
 
 protocol StocksPresenterProtocol {
@@ -59,6 +59,7 @@ final class StocksPresenter: StocksPresenterProtocol {
                 self?.view?.updateView()
             case .failure(let error):
                 self?.view?.updateView(withError: error.localizedDescription)
+                self?.view?.showNetworkErrorAlert()
             }
         }
     }

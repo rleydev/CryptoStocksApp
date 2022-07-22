@@ -103,4 +103,11 @@ extension StocksViewController: StocksViewProtocol {
     func updateView(withError message: String) {
         print("Error -", message)
     }
+    
+    func showNetworkErrorAlert() {
+        let alert = UIAlertController(title: "Network Error", message: "Unable to load data. There can be problems with the server or check your connection and try to run the app again!", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alert, animated: true, completion: nil)
+    }
 }

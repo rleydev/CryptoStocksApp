@@ -31,10 +31,10 @@ class AllStocksPresenterTests: XCTestCase {
            presenter = StocksPresenter(service: mockService)
            presenter.loadView()
            
-           let model1 = presenter.model(for: IndexPath(row: 0, section: 0))
+           let model1 = presenter.model(for: IndexPath(row: 0, section: 0).row)
            XCTAssertEqual(model1.id, "stock1", "id модели не совпадает!")
            
-           let model2 = presenter.model(for: IndexPath(row: 1, section: 0))
+           let model2 = presenter.model(for: IndexPath(row: 1, section: 0).row)
            XCTAssertEqual(model2.id, "stock2", "id модели не совпадает!")
        }
    }
