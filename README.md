@@ -21,7 +21,7 @@
 
 ## About
 - UIKit 
-- Programmatically designed UI
+- Programmatically designed UI with NSLayoutConstraints
 - MVP architecture
 - SPM dependencies: Charts, KingFisher
 - Crypto list's API: https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=50
