@@ -1,7 +1,7 @@
 # CryptoStocks App 
 <br />
     <p align="center">
-        iOS pet project app for browsing cryptocurrencies (50 items) 
+        iOS pet project application for browsing cryptocurrencies (50 items) 
     </p>
 </p>
 <p align="center">
